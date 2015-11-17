@@ -15,10 +15,7 @@ angular.module('app.routes', [])
       templateUrl: 'templates/home.html',
       controller: 'homeCtrl'
     })
-        
-      
-    
-      
+          
         
     .state('dashboard', {
       url: '/dashboard',
@@ -33,7 +30,7 @@ angular.module('app.routes', [])
     .state('logJeVoedsel', {
       url: '/log',
       templateUrl: 'templates/logJeVoedsel.html',
-      controller: 'logJeVoedselCtrl'
+      controller: 'foodLoggerCtrl'
     })
         
       
@@ -63,7 +60,7 @@ angular.module('app.routes', [])
     .state('nieuweGroep', {
       url: '/page6',
       templateUrl: 'templates/nieuweGroep.html',
-      controller: 'nieuweGroepCtrl'
+      controller: 'newGroupCtrl'
     })
         
       
