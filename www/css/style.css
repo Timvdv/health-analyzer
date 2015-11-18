@@ -2,3 +2,38 @@ h1
 {
     color:red;
 }
+
+.card
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(234, 234, 234);
+    border-radius: 3px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.5px 0.866px 1px 0px rgba(0, 0, 0, 0.031);
+    width: 100%;
+    min-height: 160px;
+    z-index: 12;
+}
+
+.card .item
+{
+    border-width:0px;
+    background: none;
+    border:none;
+}
+
+.item-divider
+{
+    font-size: 20px;
+    font-weight: lighter;
+    color: rgb(156, 156, 156);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.item-body p
+{
+    margin-top: 0;
+}
+
