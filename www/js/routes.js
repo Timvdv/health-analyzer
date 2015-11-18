@@ -58,7 +58,7 @@ angular.module('app.routes', [])
       
         
     .state('nieuweGroep', {
-      url: '/page6',
+      url: '/newgroup',
       templateUrl: 'templates/nieuweGroep.html',
       controller: 'newGroupCtrl'
     })
