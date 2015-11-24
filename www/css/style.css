@@ -37,3 +37,19 @@ h1
     margin-top: 0;
 }
 
+.bar-footer.button-block
+{
+    background: none;
+    margin: 0% 5% 10% 5%;
+}
+
+.bar-footer.button-block .button-block
+{
+    width: 90%;
+}
+
+.button-bar .button.underline
+{
+    border-bottom: 2px solid green;
+}
+

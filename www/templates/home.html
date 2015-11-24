@@ -1,10 +1,6 @@
 <ion-view title="Home">
     <ion-content padding="'true'" class="has-header">
-        <div class="button-bar">
-            <a href="#/dashboard" class="button button-stable button-block  icon ion-man"></a>
-            <button class="button button-stable button-block  icon ion-ios-list-outline"></button>
-            <a href="#/settings" class="button button-stable button-block  icon ion-android-settings"></a>
-        </div>
+        <div ng-include src="'templates/icon-menu.html'"></div>
         <div class="list card">
             <div class="item item-divider">1 Day ago</div>
             <div class="item item-body">
@@ -56,6 +52,12 @@
                 </div>
             </div>
         </div>
-        <a href="#/log" class="button button-balanced button-block  icon ion-android-add">Log your food</a>
+        
     </ion-content>
 </ion-view>
+
+<ion-footer-bar align-title="left" class="button-block">
+    <a href="#/log" class="button button-balanced button-block  icon ion-android-add">
+        Log your food
+    </a>
+</ion-footer-bar>
