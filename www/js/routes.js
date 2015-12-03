@@ -37,13 +37,24 @@ angular.module('app.routes', [])
       templateUrl: 'templates/settings.html',
       controller: 'settingsCtrl'
     })
-          
+
+    .state('graph', {
+      url: '/graph',
+      templateUrl: 'templates/graph.html',
+      controller: 'settingsCtrl'
+    })
+
     .state('nieuweGroep', {
       url: '/newgroup',
       templateUrl: 'templates/nieuweGroep.html',
       controller: 'newGroupCtrl'
     })
-        
+
+    .state('vragenLijst', {
+        url: '/questions',
+        templateUrl: 'templates/vragenLijst.html',
+        controller: 'questionController'
+    })
       
     ;
 
