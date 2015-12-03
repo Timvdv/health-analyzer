@@ -62,6 +62,13 @@ angular.module('app.routes', [])
       templateUrl: 'templates/nieuweGroep.html',
       controller: 'newGroupCtrl'
     })
+
+
+      .state('vragenLijst', {
+          url: '/questions',
+          templateUrl: 'templates/vragenLijst.html',
+          controller: 'questionController'
+      })
         
       
     ;
