@@ -52,6 +52,12 @@ angular.module('app.routes', [])
       templateUrl: 'templates/settings.html',
       controller: 'settingsCtrl'
     })
+
+      .state('graph', {
+        url: '/graph',
+        templateUrl: 'templates/graph.html',
+        controller: 'settingsCtrl'
+      })
         
       
     
