@@ -53,3 +53,31 @@ h1
     border-bottom: 2px solid green;
 }
 
+.timeline-container
+{
+    width: 100%;
+    text-align: left;
+}
+
+.timeline-container hr
+{
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    border: 0;
+    background-color: #565656;
+    top: 13px;
+}
+
+.timeline-container .circle
+{
+    background-color: #565656;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 999px;
+    margin-left: 4px;
+}
+
+
+

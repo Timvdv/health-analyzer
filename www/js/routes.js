@@ -7,25 +7,18 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
-      
-        
+
     .state('home', {
       url: '/',
       templateUrl: 'templates/home.html',
       controller: 'homeCtrl'
     })
           
-        
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: 'templates/dashboard.html',
       controller: 'dashboardCtrl'
     })
-        
-      
-    
-      
         
     .state('logJeVoedsel', {
       url: '/log',
@@ -33,30 +26,18 @@ angular.module('app.routes', [])
       controller: 'foodLoggerCtrl'
     })
         
-      
-    
-      
-        
     .state('menu', {
       url: '/menu',
       templateUrl: 'templates/menu.html',
       controller: 'menuCtrl'
     })
         
-      
-    
-      
-        
     .state('settings', {
       url: '/settings',
       templateUrl: 'templates/settings.html',
       controller: 'settingsCtrl'
     })
-        
-      
-    
-      
-        
+          
     .state('nieuweGroep', {
       url: '/newgroup',
       templateUrl: 'templates/nieuweGroep.html',
