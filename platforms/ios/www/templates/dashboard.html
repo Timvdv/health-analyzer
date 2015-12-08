@@ -1,0 +1,25 @@
+<ion-view title="Dashboard">
+    <ion-content padding="'true'">
+    <div ng-include src="'templates/icon-menu.html'"></div>
+        <div>
+            <p>
+                Dashboard hier.. hallo Sven
+
+                <a href="#/graph">Ga naar grafiek</a>
+
+            </p>
+        </div>
+    </ion-content>
+</ion-view>
+
+<ion-footer-bar align-title="left" class="timeline">
+    <div class="timeline-container">
+        <div class="row">
+            <hr>
+            <div ng-repeat="item in timeline" month="{{item.month}}" year="{{item.year}}" calories="{{item.calories}}" class="col col-10" ng-class="">
+                <div class="circle" ng-click="updateAvatar($event)"></div>
+                {{item.calories}}
+            </div>
+        </div>
+    </div>
+</ion-footer-bar>        
