@@ -3388,7 +3388,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * Say for example we have the following template code:
  *
  * ```html
- * <!-- index.html -->
+ * <!-- index.php -->
  * <div ng-view class="view-animation">
  * </div>
  *
@@ -3480,7 +3480,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
            id="anchoringExample"
            deps="angular-animate.js;angular-route.js"
            animations="true">
-    <file name="index.html">
+    <file name="index.php">
       <a href="#/">Home</a>
       <hr />
       <div class="view-container">
