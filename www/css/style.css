@@ -89,7 +89,10 @@ h1
 
 .heart-icon
 {
-
+    position:static;
+    left:10px;
+    top:100px;
+    height: 60vh;
 }
 
 .graph-icon
@@ -99,7 +102,7 @@ h1
 
 .droplet-icon
 {
-
+    height: 60vh;
 }
 
 .fat-person
