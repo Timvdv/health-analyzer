@@ -9,6 +9,7 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
     {
         var calories = 0;
     };
+<<<<<<< HEAD
 
     $scope.images = {
 	    Droplet: "img/Droplet-Icon.png",
@@ -18,4 +19,6 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
 	    Skinny: "img/Person-Skinny.png"
 	};
 
+=======
+>>>>>>> bf45f62bb2b31d83bf3e755d8eb5c2fc116ecdd6
 }]);
