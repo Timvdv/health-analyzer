@@ -38,7 +38,7 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
             ///Boolean - Whether grid lines are shown across the chart
             scaleShowGridLines: false,
             responsive: true,
-            scaleShowLabels: true
+            scaleShowLabels: false
         };
 
 
