@@ -13,9 +13,9 @@
     <div class="timeline-container">
         <div class="row">
             <hr>
-            <div ng-repeat="item in timeline" month="{{item.month}}" year="{{item.year}}" calories="{{item.calories}}" class="col col-10" ng-class="" ng-click="updateAvatar($event)">
-                <div class="circle"></div>
-                {{item.month_name}}
+            <div ng-repeat="item in timeline" month="{{item.month}}" year="{{item.year}}" calories="{{item.calories}}" class="col col-10" ng-class="">
+                <div class="circle" ng-click="updateAvatar($event)"></div>
+                {{item.calories}}
             </div>
         </div>
     </div>

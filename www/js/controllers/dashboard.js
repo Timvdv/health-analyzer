@@ -7,6 +7,6 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
 
     $scope.updateAvatar = function(obj)
     {
-        var calories = obj.target.parentElement.attributes.calories.value || obj.target.attributes.calories.value;
+        var calories = obj.target.parentElement.attributes.calories.value;
     };
 }]);
