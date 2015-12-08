@@ -8,5 +8,16 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
     $scope.updateAvatar = function(obj)
     {
         var calories = obj.target.parentElement.attributes.calories.value;
+        console.log(calories);
     };
+    
+    $scope.images = {
+	    Droplet: "img/Droplet-Icon.png",
+	    Graph: "img/Graph-Icon.png",
+	    Heart: "img/Heart-Icon.png",
+	    Fat: "img/Person-Fat.png",
+	    Skinny: "img/Person-Skinny.png"
+	};
+
+
 }]);

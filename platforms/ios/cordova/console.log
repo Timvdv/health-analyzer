@@ -12,3 +12,12 @@
 2015-12-08 13:48:04.916 HelloCordova[11177:8927814] Resetting plugins due to page load.
 2015-12-08 13:48:04.936 HelloCordova[11177:8927866] App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
 2015-12-08 13:48:05.051 HelloCordova[11177:8927814] Finished load of: file:///Users/Tim/Library/Developer/CoreSimulator/Devices/B78037E1-68E3-4E07-B793-1487150EF12C/data/Containers/Bundle/Application/1315E228-2D74-4917-9B6F-25E06FDF6837/HelloCordova.app/www/index.html#/
+2015-12-08 14:30:17.647 HelloCordova[12938:9007239] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/Tim/Library/Developer/CoreSimulator/Devices/B78037E1-68E3-4E07-B793-1487150EF12C/data/Containers/Data/Application/09B45E08-B6F8-4B65-8B2F-8A39BEDE0348/Library/Cookies/com.ionicframework.starter.binarycookies
+2015-12-08 14:30:17.934 HelloCordova[12938:9007239] Apache Cordova native platform version 3.8.0 is starting.
+2015-12-08 14:30:17.935 HelloCordova[12938:9007239] Multi-tasking -> Device: YES, App: YES
+2015-12-08 14:30:17.949 HelloCordova[12938:9007239] Unlimited access to network resources
+2015-12-08 14:30:18.893 HelloCordova[12938:9007239] Resetting plugins due to page load.
+2015-12-08 14:30:19.013 HelloCordova[12938:9007593] App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
+2015-12-08 14:30:19.303 HelloCordova[12938:9007239] Finished load of: file:///Users/Tim/Library/Developer/CoreSimulator/Devices/B78037E1-68E3-4E07-B793-1487150EF12C/data/Containers/Bundle/Application/0F9352C9-9063-4410-905D-C6D8E6126474/HelloCordova.app/www/index.html#/
+2015-12-08 14:30:40.504 HelloCordova[12938:9008056] XPC connection interrupted
+2015-12-08 14:30:40.504 HelloCordova[12938:9008055] Terminating since there is no system app.

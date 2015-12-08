@@ -2,21 +2,22 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
 {
     console.log('dashboardCtrl');
     $scope.location = $location.path();
+    
+    $scope.images = {
+            Droplet: "img/Droplet-Icon.png",
+            Graph: "img/Graph-Icon.png",
+            Heart: "img/Heart-Icon.png",
+            Fat: "img/Person-Fat.png",
+            Skinny: "img/Person-Skinny.png"
+        };
 
-    $scope.timeline = timeline;
+    $scope.timeline = timeline.getAll();
+    $scope.currentMonnth = timeline.getCurrentMonth();
 
     $scope.updateAvatar = function(obj)
     {
-        var calories = 0;
+        var calories = obj.target.parentElement.attributes.calories.value;
+        console.log(calories);
     };
-    
-    $scope.images = {
-	    Droplet: "img/Droplet-Icon.png",
-	    Graph: "img/Graph-Icon.png",
-	    Heart: "img/Heart-Icon.png",
-	    Fat: "img/Person-Fat.png",
-	    Skinny: "img/Person-Skinny.png"
-	};
-
 
 }]);
