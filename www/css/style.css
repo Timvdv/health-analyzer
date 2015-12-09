@@ -37,6 +37,23 @@ h1
     margin-top: 0;
 }
 
+.active {
+    width: 20px !important;
+    height: 20px !important;
+    position: relative !important;
+    bottom: 5px !important;
+    background: #11c1f3 !important;
+    margin-bottom: 9px !important;
+    border: 1px solid #FFF !important;
+}
+
+.active:before{
+    content: "Nu";
+    position: absolute;
+    bottom: 31px;
+}
+
+
 .bg{
     background: url('../img/dashboard-bg.png');
 }
