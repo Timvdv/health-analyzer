@@ -5,6 +5,60 @@ angular.module('app.services', [])
         function getAll()
         {
             return [
+            {
+                'month': 7,
+                'month_name': 'jul',
+                'year': 2015,
+                'calories': 521,
+                'health': 'good',
+                'water': 70,
+                'vitamins':  89
+            },
+            {
+                'month': 8,
+                'month_name': 'aug',
+                'year': 2015,
+                'calories': 521,
+                'health': 'good',
+                'water': 70,
+                'vitamins':  89
+            },
+            {
+                'month': 9,
+                'month_name': 'sep',
+                'year': 2015,
+                'calories': 531,
+                'health': 'good',
+                'water': 70,
+                'vitamins':  89
+            },
+            {
+                'month': 10,
+                'month_name': 'okt',
+                'year': 2015,
+                'calories': 421,
+                'health': 'good',
+                'water': 70,
+                'vitamins':  89
+            },
+            {
+                'month': 11,
+                'month_name': 'nov',
+                'year': 2015,
+                'calories': 721,
+                'health': 'good',
+                'water': 70,
+                'vitamins':  89
+            },
+            {
+                'month': 12,
+                'month_name': 'dec',
+                'year': 2015,
+                'calories': 532,
+                'health': 'good',
+                'water': 50,
+                'vitamins':  89
+            },
              {
                 'month': 1,
                 'month_name': 'jan',
@@ -58,55 +112,22 @@ angular.module('app.services', [])
                 'health': 'good',
                 'water': 70,
                 'vitamins':  89
-            },
-            {
-                'month': 7,
-                'month_name': 'jul',
-                'year': 2015,
-                'calories': 521,
-                'health': 'good',
-                'water': 70,
-                'vitamins':  89
-            },
-            {
-                'month': 8,
-                'month_name': 'aug',
-                'year': 2015,
-                'calories': 521,
-                'health': 'good',
-                'water': 70,
-                'vitamins':  89
-            },
-            {
-                'month': 9,
-                'month_name': 'sep',
-                'year': 2015,
-                'calories': 531,
-                'health': 'good',
-                'water': 70,
-                'vitamins':  89
-            },
-            {
-                'month': 10,
-                'month_name': 'okt',
-                'year': 2015,
-                'calories': 421,
-                'health': 'good',
-                'water': 70,
-                'vitamins':  89
-            }];
+            },             
+            ];
         }
 
         function getCurrentMonth()
         {
             var all_data = getAll(),
-                   current_month = new Date().getMonth();
+                   current_month = new Date().getMonth() + 1; //+1 because some wierd bug need to look at it.
 
             filtered_data = all_data.filter(function(el)
             {
                 return el.month == current_month;
             });
-        }        
+
+            return filtered_data;
+        }
 
         return {
                 getCurrentMonth: getCurrentMonth,

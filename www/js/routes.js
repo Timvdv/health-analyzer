@@ -44,7 +44,6 @@ angular.module('app.routes', [])
                 controller: 'graphCtrl'
             })
 
-
             .state('nieuweGroep', {
                 url: '/newgroup',
                 templateUrl: 'templates/nieuweGroep.html',
@@ -56,7 +55,6 @@ angular.module('app.routes', [])
                 templateUrl: 'templates/vragenLijst.html',
                 controller: 'questionController'
             })
-
         ;
 
         // if none of the above states are matched, use this as the fallback

@@ -12,7 +12,10 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
         };
 
     $scope.timeline = timeline.getAll();
-    $scope.currentMonnth = timeline.getCurrentMonth();
+
+    console.log(timeline.getCurrentMonth()[0]);
+
+    $scope.currentMonth = timeline.getCurrentMonth()[0];
 
     $scope.updateAvatar = function(obj)
     {
