@@ -37,6 +37,10 @@ h1
     margin-top: 0;
 }
 
+.bg{
+    background: url('../img/dashboard-bg.png');
+}
+
 .bar-footer.button-block
 {
     background: none;
