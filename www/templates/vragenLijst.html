@@ -1,34 +1,38 @@
 <ion-view title="quiz">
 
     <div class="bar bar-header bar-light">
-        <h1 class="title">Gegevens invullen</h1>
+        <h1 class="title" style="color: #9c9c9c;  text-transform: uppercase; font-size: 15px">Gegevens invullen</h1>
     </div>
 
     <ion-content padding="'true'">
-        <form class="list" style="margin-top: 50px">
+        <form class="question_list" style="margin: 50px 0 0 20px">
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">WAT IS JE NAAM?</span>
-                <input type="text" placeholder="JOHN DE GROOT" name="name">
-            </label>
+            <div>
+                <span>Wat is je naam?</span>
+                <input type="text" placeholder="" name="name">
+            </div>
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">HOEVEEL WEEG JE?</span>
-                <input type="text" placeholder="86KG" name="weight">
-            </label>
+            <div>
+                <span>Hoeveel weeg je?</span>
+                <input type="text" placeholder="" name="weight">
+            </div>
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">WAT IS JE LENGTE?</span>
-                <input type="text" placeholder="180CM" name="length">
-            </label>
+            <div>
+                <span>Wat is je lengte?</span>
+                <input type="text" placeholder="" name="length">
+            </div>
 
-            <label class="item item-input item-stacked-label">
-                <span class="input-label">WAT IS JE GEBOORTEDATUM?</span>
-                <input type="date" name="birthdate">
-            </label>
+            <div>
+                <span>Wat is je geboortedatum?</span>
+                <input id="date" type="date" name="birthdate">
+            </div>
+
+            <div>
+                <span>Hoeveel keer per week sport je?</span>
+            </div>
 
             <label class="item item-radio">
-                <input type="radio" name="group">
+                <input type="radio" name="group" value="1">
                 <div class="radio-content">
                     <div class="item-content">
                         1
@@ -37,35 +41,34 @@
                 </div>
             </label>
             <label class="item item-radio">
-                <input type="radio" name="group">
+                <input type="radio" name="group" value="2">
                 <div class="radio-content">
                     <div class="item-content">
                         2
                     </div>
-                    <i class="radio-icon ion-checkmark"></i>
+                    <i class="radio-icon ion-checkmark balanced"></i>
                 </div>
             </label>
             <label class="item item-radio">
-                <input type="radio" name="group">
+                <input type="radio" name="group" value="meer dan 2">
                 <div class="radio-content">
                     <div class="item-content">
                         > 2
                     </div>
-                    <i class="radio-icon ion-checkmark"></i>
+                    <i class="radio-icon ion-checkmark balanced"></i>
                 </div>
             </label>
             <label class="item item-radio">
-                <input type="radio" name="group">
+                <input type="radio" name="group" value="nooit">
                 <div class="radio-content">
                     <div class="item-content">
                         NOOIT
                     </div>
-                    <i class="radio-icon ion-checkmark"></i>
+                    <i class="radio-icon ion-checkmark balanced"></i>
                 </div>
             </label>
-
             <label style="float: right; padding: 20px">
-                <input type="submit"  class="button button-balanced" value="Verder">
+                <a href="#./home"><button type="submit" class="button button-balanced .question_submit">Verder</button></a>
             </label>
 
         </form>

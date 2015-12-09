@@ -1,21 +1,34 @@
 <ion-view title="Dashboard">
-    <ion-content padding="'true'">
-    <div ng-include src="'templates/icon-menu.html'"></div>
-        <div>
-                <a href="#/graph"><img class="droplet-Icon" src="{{images.Droplet}}"/>  </a>
-                <a href="#/graph"><img class="graph-icon" src="{{images.Graph}}"/>      </a>
-                <a href="#/graph"><img class="heart-Icon" src="{{images.Heart}}"/>      </a>
+    <div class="bg" style="width: 100%; height: 100%;">
+        <ion-content padding="'true'">
+            <div ng-include src="'templates/icon-menu.html'"></div>
+            <h2 style="text-align: center">My Profile</h2>
+
+            <div style="width: 100%; display: flex; justify-content: center; position: relative">
                 <img class="fat-person" src="{{images.Fat}}"/>
-        </div>
-    </ion-content>
+            </div>
+
+            <div style="position: absolute; top: 140px; left:50px" class="item-graph"><h2 style="color: #ff4f70">
+                50%</h2> <a href="#/graph"><img class="heart-Icon" src="{{images.Heart}}"/></a>
+            </div>
+            <div style="position: absolute; bottom: 130px; left:90px" class="item-graph"><h2 style="color: #0FA0CE">
+                25%</h2>   <a href="#/graph?water"><img class="droplet-Icon" src="{{images.Droplet}}"/></a>
+            </div>
+            <div style="position: absolute; bottom: 30px; right:40px" class="item-graph"><h2 style="color: #ff4f70">
+                90%</h2><a href="#/graph"><img class="graph-icon" src="{{images.Graph}}"/> </a>
+            </div>
+        </ion-content>
+    </div>
 </ion-view>
 
-<ion-footer-bar align-title="left" class="timeline">
+<ion-footer-bar align-title="left" class="timeline" style="bottom: 40px; background-color: transparent">
     <div class="timeline-container">
         <div class="row">
             <hr>
             <div ng-repeat="item in timeline" month="{{item.month}}" year="{{item.year}}" calories="{{item.calories}}" class="col col-10">
-                <div class="circle" ng-click="updateAvatar($event)" ng-class="item.month == currentMonth.month ? 'active' : '' "></div>
+                <div class="circle" ng-click="updateAvatar($event)" ng-class="item.month == currentMonth.month ? 'active' : '' ">
+                    
+                </div>
                 {{item.month_name}}
             </div>
         </div>
