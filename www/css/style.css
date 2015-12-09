@@ -91,30 +91,53 @@ h1
     margin: 0;
 }
 
-.heart-icon
+.heart-Icon
 {
-    position:static;
-    left:10px;
-    top:100px;
-    height: 60vh;
+    float: left;
+    margin-left: 10px;
 }
 
 .graph-icon
 {
-
+    float: right;
 }
 
 .droplet-icon
 {
+    float:left;
     height: 60vh;
 }
 
 .fat-person
 {
-  height: 60vh;
-  margin-top: 80px;
+    height: 60vh;
+    margin-top: 80px;
+    
+}
+.dashboard-container
+{
+    float:left;
+    width: 100vw;
 }
 
+.block
+{
+    width: 33vw;
+    height 100vh;
+    float:left;
+}
+.block2
+{
+    width: 33vw;
+    height 100vh;
+    float: left;
+}
+.block3
+{
+    width: 33vw;
+    height 100vh;
+    float: right;  
+}
 .question_list div {
     font-weight: lighter;
     text-transform: uppercase;
