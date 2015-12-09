@@ -123,19 +123,19 @@ h1
 .block
 {
     width: 33vw;
-    height 100vh;
+    height: 100vh;
     float:left;
 }
 .block2
 {
     width: 33vw;
-    height 100vh;
+    height: 100vh;
     float: left;
 }
 .block3
 {
     width: 33vw;
-    height 100vh;
+    height: 100vh;
     float: right;  
 }
 .question_list div {

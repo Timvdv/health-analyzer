@@ -1,23 +1,26 @@
 <ion-view title="Dashboard">
     <div class="bg" style="width: 100%; height: 100%;">
-    <ion-content padding="'true'">
-        <div ng-include src="'templates/icon-menu.html'"></div>
-        <h2 style="text-align: center">My Profile</h2>
+        <ion-content padding="'true'">
+            <div ng-include src="'templates/icon-menu.html'"></div>
+            <h2 style="text-align: center">My Profile</h2>
 
-        <div style="width: 100%; display: flex; justify-content: center; position: relative">
-            <img class="fat-person" src="{{images.Fat}}"/>
-        </div>
+            <div style="width: 100%; display: flex; justify-content: center; position: relative">
+                <img class="fat-person" src="{{images.Fat}}"/>
+            </div>
 
-        <div style="position: absolute; top: 140px; left:50px" class="item-graph"><h2>50%</h2> <a href="#/graph"><img class="heart-Icon" src="{{images.Heart}}"/></a>
-        </div>
-        <div style="position: absolute; bottom: 130px; left:90px" class="item-graph"><h2>25%</h2>   <a href="#/graph?water"><img class="droplet-Icon" src="{{images.Droplet}}"/></a>
-        </div>
-        <div style="position: absolute; bottom: 30px; right:40px" class="item-graph"><h2>90%</h2><a href="#/graph"><img class="graph-icon" src="{{images.Graph}}"/> </a>
-        </div>
+            <div style="position: absolute; top: 140px; left:50px" class="item-graph"><h2 style="color: #ff4f70">
+                50%</h2> <a href="#/graph"><img class="heart-Icon" src="{{images.Heart}}"/></a>
+            </div>
+            <div style="position: absolute; bottom: 130px; left:90px" class="item-graph"><h2 style="color: #0FA0CE">
+                25%</h2>   <a href="#/graph?water"><img class="droplet-Icon" src="{{images.Droplet}}"/></a>
+            </div>
+            <div style="position: absolute; bottom: 30px; right:40px" class="item-graph"><h2 style="color: #ff4f70">
+                90%</h2><a href="#/graph"><img class="graph-icon" src="{{images.Graph}}"/> </a>
+            </div>
 
 
-    </ion-content>
-        </div>
+        </ion-content>
+    </div>
 </ion-view>
 
 <ion-footer-bar align-title="left" class="timeline" style="bottom: 40px; background-color: transparent">
