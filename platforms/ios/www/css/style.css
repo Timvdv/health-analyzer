@@ -50,7 +50,7 @@ h1
 
 .button-bar .button.underline
 {
-    border-bottom: 1px solid green;
+    border-bottom: 2px solid green;
 }
 
 .timeline-container
@@ -79,10 +79,5 @@ h1
     margin-left: 4px;
 }
 
-.button-bar .button
-{
-    border:none;
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    margin: 0;
-}
+
+

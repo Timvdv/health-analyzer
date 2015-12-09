@@ -1,0 +1,23 @@
+<ion-view title="Log Your Food">
+    <ion-content padding="'true'">
+        <div ng-include src="'templates/header-bar.html'"></div>
+        <ion-list class="has-header">
+            <label class="item item-input">
+                <span class="input-label">Search</span>
+                <input type="text" placeholder="Search food" ng-model="search" ng-change="searchChange()" id="search" >
+            </label>
+
+            {{$scope.details}}
+
+            <ion-item>Item 1</ion-item>
+            <ion-item>Item 2</ion-item>
+            <ion-item>Item 3</ion-item>
+        </ion-list>
+        <button class="button button-stable button-block ">Nieuwe set</button>
+        <div class="spacer" style="height: 100px;"></div>
+        <div class="button-bar">
+            <a href="#/log" class="button button-stable button-block ">Log je voedsel</a>
+            <a href="#/newgroup" class="button button-stable button-block ">nieuwe groep</a>
+        </div>
+    </ion-content>
+</ion-view>
