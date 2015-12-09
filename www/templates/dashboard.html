@@ -1,11 +1,17 @@
 <ion-view title="Dashboard">
     <ion-content padding="'true'">
     <div ng-include src="'templates/icon-menu.html'"></div>
-        <div>
-                <a href="#/graph"><img class="heart-Icon"   src="{{images.Heart}}"/>      </a>
-                <a href="#/graph"><img class="droplet-Icon" src="{{images.Droplet}}"/>    </a>
-                <img class="fat-person" src="{{images.Fat}}"/>
-                <a href="#/graph"><img class="graph-icon"   src="{{images.Graph}}"/>      </a>
+        <div class="dashboard-container">
+                <div class="block">
+                    <ul>
+                        <li></li><a href="#/graph"><img class="heart-Icon"   src="{{images.Heart}}"/>   </a>    </li>
+                        <li><a href="#/graph"><img class="droplet-Icon" src="{{images.Droplet}}"/> </a>         </li>
+                        <li><a href="#/graph"><img class="graph-icon" src="{{images.Graph}}"/></a>              </li>
+                    </ul>
+                </div>
+                <div class="block2">
+                    <img class="fat-person" src="{{images.Fat}}"/>
+                </div>            
         </div>
     </ion-content>
 </ion-view>
