@@ -47,12 +47,10 @@ h1
     border: 1px solid #FFF !important;
 }
 
-.active:before{
-    content: "Nu";
+.right-now {
     position: absolute;
     bottom: 31px;
 }
-
 
 .bg{
     background: url('../img/dashboard-bg.png');
@@ -128,7 +126,7 @@ h1
 .fat-person
 {
     height: 60vh;
-    margin-top: 80px;
+    margin-top: 30px;
     
 }
 .dashboard-container
@@ -178,7 +176,7 @@ h1
     height: 50px;
 }
 
-::-webkit-datetime-edit-text { color: #9c9c9c; font-weight: lighter; padding: 10px }
+::-webkit-datetime-edit-text { color: #9c9c9c; font-weight: lighter; padding: 2px }
 ::-webkit-datetime-edit { padding: 5px 0 5px 0;}
 ::-webkit-calendar-picker-indicator { color: #66cc33 ; }
 
@@ -209,9 +207,9 @@ h1
 }
 
 .question_list .item-radio{
-    width: 150px;
+    width: 130px;
     height: 50px;
     margin-bottom: 10px;
-    margin-right: 20px;
+    margin-right: 10px;
     display: inline-block;
 }

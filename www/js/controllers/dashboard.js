@@ -17,10 +17,26 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
 
     $scope.currentMonth = timeline.getCurrentMonth()[0];
 
-    $scope.updateAvatar = function(obj)
+    $scope.currentMonth.person = $scope.currentMonth.calories > 500 ? $scope.images.Fat : $scope.images.Skinny;
+
+    $scope.updateAvatar = function(el)
     {
-        var calories = obj.target.parentElement.attributes.calories.value;
-        console.log(calories);
+        var attr = el.target.parentElement.attributes,
+               calories = attr.calories.value,
+               month = attr.month.value,
+               year = attr.year.value,
+               water = attr.water.value,
+               vitamins = attr.vitamins.value;
+
+       $scope.currentMonth.calories = calories;
+       $scope.currentMonth.month = month;
+       $scope.currentMonth.year = year;
+       $scope.currentMonth.water = water;
+       $scope.currentMonth.vitamins = vitamins;
+
+       $scope.currentMonth.person = $scope.currentMonth.calories > 500 ? $scope.images.Fat : $scope.images.Skinny;
+
+       $scope.$apply;
     };
 
 }]);
