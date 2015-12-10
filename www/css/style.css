@@ -180,7 +180,7 @@ h1
 
 ::-webkit-datetime-edit-text { color: #9c9c9c; font-weight: lighter; padding: 2px }
 ::-webkit-datetime-edit { padding: 5px 0 5px 0;}
-::-webkit-calendar-picker-indicator { color: #66cc33; }
+::-webkit-calendar-picker-indicator { color: #33cd5f; }
 
 .question_list ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #9c9c9c;
@@ -213,4 +213,13 @@ h1
     margin-bottom: 10px;
     margin-right: 10px;
     display: inline-block;
+}
+
+.question_list .ion-checkmark  {
+    color: #ffffff;
+}
+
+.question_list .item-radio input:checked + .radio-content .item-content {
+    background-color: #33cd5f;
+    color: #ffffff;
 }

@@ -3,10 +3,9 @@
     <div class="bar bar-header bar-light">
         <h1 class="title" style="color: #9c9c9c;  text-transform: uppercase; font-size: 15px">Gegevens invullen</h1>
     </div>
-
+    
     <ion-content padding="'true'">
-        <form class="question_list" style="margin: 50px 0 0 20px">
-
+        <form class="question_list" style="margin: 50px 0 0 20px" action="#/home">
             <div>
                 <span>Wat is je naam?</span>
                 <input type="text" placeholder="" name="name">
@@ -23,8 +22,8 @@
             </div>
 
             <div>
+                <span>Wat is je geboortedatum?</span>
                 <label>
-                    <span>Wat is je geboortedatum?</span>
                     <input id="date" type="date" name="birthdate">
                 </label>
             </div>
@@ -33,47 +32,17 @@
                 <span>Hoeveel keer per week sport je?</span>
             </div>
 
-            <label class="item item-radio">
-                <input type="radio" name="group" value="1">
-                <div class="radio-content">
-                    <div class="item-content">
-                        1
-                    </div>
-                    <i class="radio-icon ion-checkmark balanced"></i>
-                </div>
-            </label>
-            <label class="item item-radio">
-                <input type="radio" name="group" value="2">
-                <div class="radio-content">
-                    <div class="item-content">
-                        2
-                    </div>
-                    <i class="radio-icon ion-checkmark balanced"></i>
-                </div>
-            </label>
-            <label class="item item-radio">
-                <input type="radio" name="group" value="meer dan 2">
-                <div class="radio-content">
-                    <div class="item-content">
-                        > 2
-                    </div>
-                    <i class="radio-icon ion-checkmark balanced"></i>
-                </div>
-            </label>
-            <label class="item item-radio">
-                <input type="radio" name="group" value="nooit">
-                <div class="radio-content">
-                    <div class="item-content">
-                        NOOIT
-                    </div>
-                    <i class="radio-icon ion-checkmark balanced"></i>
-                </div>
-            </label>
+            <ion-list>
+                <ion-radio ng-model="choice" ng-value="'A'">1</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'B'">2</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'C'">> 2</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'D'">Nooit</ion-radio>
+            </ion-list>
+
             <label style="float: right; display: block; margin-top: 50px">
-                <a href="#./home"><button type="submit" class="button button-balanced .question_submit">Verder</button></a>
+               <button type="submit" class="button button-balanced" style="border-color: #33cd5f;">Verder</button>
             </label>
         </form>
-
     </ion-content>
 
 </ion-view>
