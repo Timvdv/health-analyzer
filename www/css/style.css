@@ -47,8 +47,7 @@ h1
     border: 1px solid #FFF !important;
 }
 
-.active:before{
-    content: "Nu";
+.right-now {
     position: absolute;
     bottom: 31px;
 }

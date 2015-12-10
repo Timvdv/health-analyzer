@@ -11,8 +11,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 521,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 54,
+                'vitamins':  53
             },
             {
                 'month': 8,
@@ -20,8 +20,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 521,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 83,
+                'vitamins':  65
             },
             {
                 'month': 9,
@@ -29,8 +29,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 531,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 84,
+                'vitamins':  92
             },
             {
                 'month': 10,
@@ -38,8 +38,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 421,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 56,
+                'vitamins':  73
             },
             {
                 'month': 11,
@@ -47,8 +47,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 721,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 25,
+                'vitamins':  51
             },
             {
                 'month': 12,
@@ -56,8 +56,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': 50,
-                'vitamins':  89
+                'water': 89,
+                'vitamins':  64
             },
              {
                 'month': 1,
@@ -65,8 +65,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 321,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 45,
+                'vitamins':  41
             },
             {
                 'month': 2,
@@ -74,8 +74,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 72,
+                'vitamins':  71
             },
             {
                 'month': 3,
@@ -83,8 +83,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 89,
+                'vitamins':  64
             },
             {
                 'month': 4,
@@ -92,8 +92,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 513,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 55,
+                'vitamins':  43
             },
             {
                 'month': 5,
@@ -101,8 +101,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 1245,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 26,
+                'vitamins':  62
             },
             {
                 'month': 6,
@@ -110,8 +110,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 531,
                 'health': 'good',
-                'water': 70,
-                'vitamins':  89
+                'water': 53,
+                'vitamins':  69
             },             
             ];
         }
