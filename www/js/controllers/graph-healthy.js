@@ -7,11 +7,11 @@ angular.module('app.controllers').controller('graphHealthyCtrl', ['$scope', '$ht
 
 
     var data = {
-        labels: ["December","Toekomst","Toekomst","Toekomst"],
+        labels: ["December","January", "February", "March"],
         datasets: [
             {
                 label: "My First dataset",
-                fillColor: "rgba(255, 0, 34, 0.71)",
+                fillColor: "rgb(51, 204, 255)",
                 strokeColor: "#FFF",
                 pointColor: "#FFF",
                 pointStrokeColor: "#fff",
@@ -21,7 +21,7 @@ angular.module('app.controllers').controller('graphHealthyCtrl', ['$scope', '$ht
             },
             {
                 label: "My Second dataset",
-                fillColor: "rgba(255, 0, 80, 0.50)",
+                fillColor: "rgba(200, 204, 255, 0.80)",
                 strokeColor: "#FFF",
                 pointColor: "#FFF",
                 pointStrokeColor: "#fff",
