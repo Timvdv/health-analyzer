@@ -180,8 +180,7 @@ h1
 
 ::-webkit-datetime-edit-text { color: #9c9c9c; font-weight: lighter; padding: 2px }
 ::-webkit-datetime-edit { padding: 5px 0 5px 0;}
-::-webkit-calendar-picker-indicator { color: #66cc33 ; }
-
+::-webkit-calendar-picker-indicator { color: #66cc33; }
 
 .question_list ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #9c9c9c;
