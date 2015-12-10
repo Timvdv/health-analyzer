@@ -39,9 +39,15 @@ angular.module('app.routes', [])
             })
 
             .state('graph', {
-                url: '/graph',
+                url: '/graph-hart',
                 templateUrl: 'templates/graph.html',
                 controller: 'graphCtrl'
+            })
+
+            .state('graph-water', {
+                url: '/graph-zuurstof',
+                templateUrl: 'templates/graph-water.html',
+                controller: 'graphWaterCtrl'
             })
 
             .state('nieuweGroep', {
