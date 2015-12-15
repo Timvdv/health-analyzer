@@ -3,9 +3,6 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
     console.log('graphCtrl1');
     $scope.location = $location.path();
 
-
-
-
         var data = {
             labels: ["December","Toekomst"],
             datasets: [
@@ -32,9 +29,6 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
             ]
         };
 
-
-
-
     var dataBars = {
         labels: ["December", "Toekomst"],
         datasets: [
@@ -57,20 +51,14 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
         ]
     };
 
+    var context = document.getElementById('skills').getContext('2d');
+    var options = {
+        ///Boolean - Whether grid lines are shown across the chart
+        scaleShowGridLines: false,
+        responsive: true,
+        scaleShowLabels: false
+    };
 
-        var context = document.getElementById('skills').getContext('2d');
-        var options = {
-
-            ///Boolean - Whether grid lines are shown across the chart
-            scaleShowGridLines: false,
-            responsive: true,
-            scaleShowLabels: false
-        };
-
-
-        var myLineChart = new Chart(context).Line(data, options);
-        //var myBarChart = new Chart(context).Bar(dataBars, options);
-
-
-
+    var myLineChart = new Chart(context).Line(data, options);
+    //var myBarChart = new Chart(context).Bar(dataBars, options);
 }]);

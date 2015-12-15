@@ -3,10 +3,6 @@ angular.module('app.controllers').controller('graphWaterCtrl', ['$scope', '$http
     console.log('graphWatertrl');
     $scope.location = $location.path();
 
-
-
-
-
     var dataBars = {
         labels: ["December", "Toekomst"],
         datasets: [
@@ -29,7 +25,6 @@ angular.module('app.controllers').controller('graphWaterCtrl', ['$scope', '$http
         ]
     };
 
-
     var context = document.getElementById('skills2').getContext('2d');
     var options = {
 
@@ -40,7 +35,4 @@ angular.module('app.controllers').controller('graphWaterCtrl', ['$scope', '$http
     };
 
     var myBarChart = new Chart(context).Bar(dataBars, options);
-
-
-
 }]);
