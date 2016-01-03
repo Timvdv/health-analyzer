@@ -221,5 +221,7 @@ h1
     background-color: #33cd5f;
     color: #ffffff;
 }
-
+.checked{
+    background-color: "green";
+}
 
