@@ -91,7 +91,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     // kan doen met een ID. (Voor het tonen van JOUW eigen lijst) maar weet niet of dit mogelijk/makkelijk is.
     $scope.addItem = function (id, name, type, description, url)
     {
-        if(firstClick == true){
+        if(firstClick == true && localStorage["items"]){
             itemList = JSON.parse(localStorage["items"]);    
             localStorage["items"] = "";
             console.log("Firstclick :", firstClick);
@@ -100,14 +100,25 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         firstClick = false;
         console.log("Firstclick :", firstClick);
 
+        var cal = 0;
+        var re = /Calories:\s(\d+)/ig;
+        var regexCal = re.exec(description);
+        if(regexCal && regexCal.length)
+        {
+            cal = parseInt(regexCal[1]);
+        }
+
         itemList[currentDate.getMonth()].items.push({
             "id": id,
             "name": name,
             "type": type,
             "description": description,
             "url": url,
-            "date": currentDate.toJSON().slice(0,10)
+            "date": currentDate.toJSON().slice(0,10),
+            "calories": cal
         });
+
+        console.log(cal);
 
         localStorage["items"] = JSON.stringify(itemList);        
         console.log("LocalStorage :",JSON.parse(localStorage["items"]));
@@ -133,14 +144,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
             var month = currentMonth[i];
             
             // "Per 100g - Calories: 254kcal | Fat: 15.92g | Carbs: 2.77g | Protein: 24.26g"
-            var calories =  parseInt(month.description.split(" ")[4]);
-            if(!isNaN(calories))
-            {
-                return_data.calories += calories;
-            }
-            month.description.split(seperator);
-            
-            //console.log(month.description.split(seperator));
+            return_data.calories += month.calories;
         };
 
         console.log(return_data);
