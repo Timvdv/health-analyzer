@@ -5,8 +5,59 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     var counter = 0;
     var search = document.getElementById('search');
     var countdown_interval = null;
-    var itemList = [];
-    
+    var currentDate = new Date();
+    var itemList = [
+    {
+        'month': 'jan',
+        'items': []
+    },
+    {
+        'month': 'feb',
+        'items': []
+    },
+    {
+        'month': 'mar',
+        'items': []
+    },
+    {
+        'month': 'apr',
+        'items': []
+    },
+    {
+        'month': 'may',
+        'items': []
+    },
+    {
+        'month': 'jun',
+        'items': []
+    },
+    {
+        'month': 'jul',
+        'items': []
+    },
+    {
+        'month': 'aug',
+        'items': []
+    },
+    {
+        'month': 'sep',
+        'items': []
+    },
+    {
+        'month': 'okt',
+        'items': []
+    },
+    {
+        'month': 'nov',
+        'items': []
+    },
+    {
+        'month': 'dec',
+        'items': []
+    }];
+    var tempItemList = [];
+    var firstClick = true;
+
 
     $scope.searchChange = function (event)
     {
@@ -32,22 +83,68 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
                 clearInterval(countdown_interval);
                 $scope.searchChange(searchEvent);
             }
-        }, 200);
+        }, 125);
     };
 
     // WORK IN PROGRESS.
     // Momenteel sla ik de ID van het voedsel op ipv de naam, beschrijving etc. zodat ik later een API call 
     // kan doen met een ID. (Voor het tonen van JOUW eigen lijst) maar weet niet of dit mogelijk/makkelijk is.
-    $scope.addItem = function (item)
+    $scope.addItem = function (id, name, type, description, url)
     {
-        console.log(item);
-        itemList.push(item);
-        localStorage["items"] = JSON.stringify(itemList);
-        console.log(localStorage["items"]);
-        var element = document.getElementById(item);
-        element.className += "checked";
-        // Uncomment deze zin om de localstorage te legen.
-        //localStorage["items"] = "";
-        //itemList.push(JSON.parse(localStorage["items"]));
-    }
+        if(firstClick == true){
+            itemList = JSON.parse(localStorage["items"]);    
+            localStorage["items"] = "";
+            console.log("Firstclick :", firstClick);
+        } 
+
+        firstClick = false;
+        console.log("Firstclick :", firstClick);
+
+        itemList[currentDate.getMonth()].items.push({
+            "id": id,
+            "name": name,
+            "type": type,
+            "description": description,
+            "url": url,
+            "date": currentDate.toJSON().slice(0,10)
+        });
+
+        localStorage["items"] = JSON.stringify(itemList);        
+        console.log("LocalStorage :",JSON.parse(localStorage["items"]));
+        console.log("itemList :", itemList);
+        $scope.addMonthToYear();
+    };
+
+    $scope.addMonthToYear = function ()
+    {
+        var currentMonth = itemList[currentDate.getMonth()].items;
+
+        var return_data = {
+            'month': 7,
+            'month_name': 'jul',
+            'year': 2015,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53
+        };
+
+        for (var i = currentMonth.length - 1; i >= 0; i--) {
+            var month = currentMonth[i];
+            
+            // "Per 100g - Calories: 254kcal | Fat: 15.92g | Carbs: 2.77g | Protein: 24.26g"
+            var calories =  parseInt(month.description.split(" ")[4]);
+            if(!isNaN(calories))
+            {
+                return_data.calories += calories;
+            }
+            month.description.split(seperator);
+            
+            //console.log(month.description.split(seperator));
+        };
+
+        console.log(return_data);
+        
+
+    };
 }]);

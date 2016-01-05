@@ -13,7 +13,7 @@
                 food_name="{{food.name}}"
                 food_type="{{food.type}}"
                 food_url="{{food.url}}"
-                class="icon ion-android-add" ng-click="addItem(food.food_id)">
+                class="icon ion-android-add" ng-click="addItem(food.food_id, food.food_name, food.food_type, food.food_description, food.food_url)">
                     {{food.food_name}} <br>
                     {{food.food_description}}
             </ion-item>
