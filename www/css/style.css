@@ -224,4 +224,12 @@ h1
 .checked{
     background-color: "green";
 }
+#settings_page, #settings_page a {
+    text-align: center;
+    text-decoration: none;
+}
+
+#settings_page .card {
+    min-height: 50px;
+}
 
