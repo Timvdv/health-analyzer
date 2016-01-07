@@ -224,12 +224,18 @@ h1
 .checked{
     background-color: "green";
 }
-#settings_page, #settings_page a {
+
+#settings_page, #settings_page a{
     text-align: center;
     text-decoration: none;
 }
 
 #settings_page .card {
     min-height: 50px;
+}
+
+#about-page .card p {
+    text-align: justify;
+    padding: 0 20px 10px 20px;
 }
 
