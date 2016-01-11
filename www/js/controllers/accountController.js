@@ -41,7 +41,9 @@ angular.module('app.controllers').controller('accountController', ['$scope', '$h
             length: length,
             weight: weight,
             birthdate: birthdate,
-            sport: sport
+            sport: sport,
+            fitbit: false,
+            hologram: false
         };
 
         localStorage.setItem('user',  JSON.stringify(userData));
