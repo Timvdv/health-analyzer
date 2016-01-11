@@ -233,13 +233,18 @@ h1
 .datePicker button {
     display: inline-block;
     padding: 2%;
-    background-color: gray;
     width:8%;
     box-sizing: border-box;
+    background-color: #F5F5F5;
+    margin-bottom:2%;
+    border: 1px solid #F0F0F0;
+    border-radius: 2px;
+
 }
 .datePicker{
     width:100%;
     display: inline-block;
+    font-size: 6mm;
 }
 #nextDay{
     float:right;
@@ -260,3 +265,44 @@ h1
     min-height: 50px;
 }
 
+<<<<<<< HEAD
+=======
+#bmi_result div{
+    display: inline-block;
+    width: 50%;
+    height: auto
+;
+}
+
+#bmi {
+    font-size: 40px;
+}
+.error-message{
+    text-align: center;
+    width: 100%;
+    color:red;
+    font-size:17px;
+}
+#totalCalories{
+
+}
+.calorie-negative{
+    border: 2px solid #e42112;
+    border-color: #e42112;
+    background-color: #ef473a;
+    border-radius:2px;
+}
+
+.calorie-danger{
+    border: 2px solid #e6b500;
+    border-color:#e6b500;
+    background-color:#ffc900;
+    border-radius:2px;
+}
+.calorie-positive{
+    border: 2px solid #28a54c;
+    border-color: #28a54c;
+    background-color: #33cd5f;
+    border-radius:2px;
+}
+>>>>>>> 5fa2e2b07224de24a45a25bc43adbe3fd15f1331
