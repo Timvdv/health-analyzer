@@ -26,6 +26,12 @@ angular.module('app.routes', [])
                 controller: 'foodLoggerCtrl'
             })
 
+            .state('myfood', {
+                url: '/myfood',
+                templateUrl: 'templates/myFood.html',
+                controller: 'myFoodCtrl'
+            })
+
             .state('menu', {
                 url: '/menu',
                 templateUrl: 'templates/menu.html',

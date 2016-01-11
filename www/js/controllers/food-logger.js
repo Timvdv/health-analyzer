@@ -55,6 +55,127 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         'month': 'dec',
         'items': []
     }];
+
+    var return_data = [{
+            'month': 0,
+            'month_name': 'jan',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 1,
+            'month_name': 'feb',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 2,
+            'month_name': 'mar',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 3,
+            'month_name': 'apr',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 4,
+            'month_name': 'may',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 5,
+            'month_name': 'jun',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 6,
+            'month_name': 'jul',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 7,
+            'month_name': 'aug',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 8,
+            'month_name': 'sept',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 9,
+            'month_name': 'okt',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 10,
+            'month_name': 'nov',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        },
+        {
+            'month': 11,
+            'month_name': 'dec',
+            'year': 2016,
+            'calories': 0,
+            'health': 'good',
+            'water': 54,
+            'vitamins':  53,
+            'fat': 0
+        }];
     var tempItemList = [];
     var firstClick = true;
 
@@ -73,7 +194,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     {
         clearInterval(countdown_interval);
         counter = 4;
-        console.log(counter);
+        //console.log(counter);
         countdown_interval = setInterval(function(){
             if(counter>0){
                 counter--;
@@ -87,13 +208,11 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     };
 
     // WORK IN PROGRESS.
-    // Momenteel sla ik de ID van het voedsel op ipv de naam, beschrijving etc. zodat ik later een API call 
-    // kan doen met een ID. (Voor het tonen van JOUW eigen lijst) maar weet niet of dit mogelijk/makkelijk is.
     $scope.addItem = function (id, name, type, description, url)
     {
         if(firstClick == true && localStorage["items"]){
             itemList = JSON.parse(localStorage["items"]);    
-            localStorage["items"] = "";
+            //localStorage["items"] = "";
             console.log("Firstclick :", firstClick);
         } 
 
@@ -101,11 +220,18 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         console.log("Firstclick :", firstClick);
 
         var cal = 0;
-        var re = /Calories:\s(\d+)/ig;
-        var regexCal = re.exec(description);
+        var fat = 0;
+        var caloriesRegex = /Calories:\s(\d+)/ig;
+        var fatRegex = /Fat:\s(\d+)/ig;
+        var regexCal = caloriesRegex.exec(description);
+        var regexFat = fatRegex.exec(description);
         if(regexCal && regexCal.length)
         {
             cal = parseInt(regexCal[1]);
+        }
+        if(regexFat && regexFat.length)
+        {
+            fat = parseInt(regexFat[1]);
         }
 
         itemList[currentDate.getMonth()].items.push({
@@ -115,14 +241,15 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
             "description": description,
             "url": url,
             "date": currentDate.toJSON().slice(0,10),
-            "calories": cal
+            "calories": cal,
+            "fat": fat
         });
 
-        console.log(cal);
+        console.log("Calories:", cal);
+        console.log("Fat:", fat);
 
         localStorage["items"] = JSON.stringify(itemList);        
         console.log("LocalStorage :",JSON.parse(localStorage["items"]));
-        console.log("itemList :", itemList);
         $scope.addMonthToYear();
     };
 
@@ -130,25 +257,15 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     {
         var currentMonth = itemList[currentDate.getMonth()].items;
 
-        var return_data = {
-            'month': 7,
-            'month_name': 'jul',
-            'year': 2015,
-            'calories': 0,
-            'health': 'good',
-            'water': 54,
-            'vitamins':  53
-        };
-
         for (var i = currentMonth.length - 1; i >= 0; i--) {
-            var month = currentMonth[i];
-            
+            var month = currentMonth[i];  
             // "Per 100g - Calories: 254kcal | Fat: 15.92g | Carbs: 2.77g | Protein: 24.26g"
-            return_data.calories += month.calories;
+            return_data[currentDate.getMonth()].calories += month.calories;
+            return_data[currentDate.getMonth()].fat += month.fat;
+            localStorage['monthlyData'] = JSON.stringify(return_data);
+            //$scope.timeline[currentDate.getMonth()].calories = return_data.calories;
         };
-
-        console.log(return_data);
-        
-
+        console.log("LocalStorage:", localStorage['monthlyData']);
+        console.log();
     };
 }]);

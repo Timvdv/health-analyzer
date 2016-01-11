@@ -222,6 +222,27 @@ h1
     color: #ffffff;
 }
 .checked{
-    background-color: "green";
+    background-color: #33cd5f;
+    border: 1px solid #ffffff;
+    
 }
-
+.datePicker button {
+    display: inline-block;
+    padding: 2%;
+    background-color: gray;
+    width:8%;
+    box-sizing: border-box;
+}
+.datePicker{
+    width:100%;
+    display: inline-block;
+}
+#nextDay{
+    float:right;
+}
+#date{
+    width:80%;
+    font-size:;
+    display: inline-block;
+    text-align: center;
+}
