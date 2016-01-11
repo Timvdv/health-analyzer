@@ -2,6 +2,24 @@
     <ion-content padding="'true'">
         <div ng-include src="'templates/icon-menu.html'"></div>
         <div class="list card">
+            <div class="item item-divider">Body Massa Index (BMI)</div>
+            <div class="item item-body">
+                <div>
+                    <p style="font-size: 30px;">
+                        <strong>{{ bmi }} </strong>
+                    </p>
+                    <hr>
+                    <p>
+                        <strong>{{bmi_result}}</strong> <br>
+                        Advies: {{ bmi_advice}}
+                    </p>
+                    <p>
+                        Lengte: <strong>{{ length}}m</strong> | Gewicht <strong>{{ weight }}kg</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="list card">
             <div class="item item-divider">1 Day ago</div>
             <div class="item item-body">
                 <div>

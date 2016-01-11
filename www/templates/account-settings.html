@@ -55,16 +55,20 @@
                 <input type="button" value="Opslaan" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
         </form>
-        <div class="list card">
+        <div class="list card" id="bmi-card">
             <div class="item item-divider">BMI</div>
             <div class="item item-body">
                 <div>
-                    <p>
-                        {{ bmi_result}}
+                    <p style="font-size: 30px">
+                        <strong>{{ bmi }} </strong>
                     </p>
                     <hr>
-                    <p style="font-size: 25px">
-                        {{ bmi }}
+                    <p>
+                        <strong>{{bmi_result}}</strong> <br>
+                        Advies: {{ bmi_advice}}
+                    </p>
+                    <p>
+                        Lengte: <strong>{{ length}}m</strong> | Gewicht <strong>{{ weight }}kg</strong>
                     </p>
                 </div>
             </div>
