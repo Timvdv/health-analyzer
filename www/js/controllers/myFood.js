@@ -10,7 +10,7 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     var dateContainer = document.getElementById('date');
     var items = [];
     var monthFix = currentMonth;
-    var dayFix = currentDay
+    var dayFix = currentDay;
 //===========================================================================================================
 // NUMBER FIX FUNCTION
 //=========================================================================================================== 
@@ -36,10 +36,17 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
 
     var dateString = "2016-" + monthFix + "-" + dayFix;
     dateContainer.innerHTML = dateString;
-    if(localStorage["items"] != ""){
-       items = JSON.parse(localStorage["items"]); 
-    }
     
+    if(localStorage.items && !localStorage.items.length)
+    {
+       localStorage.items = items;
+    }
+
+    // if(localStorage["items"] != "")
+    // {
+    //    items = JSON.parse(localStorage["items"]); 
+    // }
+
     var tempArray = [];
 //===========================================================================================================
 // CHECK FOR MATCH FUNCTION
@@ -48,10 +55,21 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     {
         tempArray = [];
         $scope.dailyItems = "";
-        items = JSON.parse(localStorage["items"]); 
-        console.log("Checking...");
-        console.log("Items date: ", items[getDate.getMonth()].items[14].date); //Dit is om even te vergelijken in de console. (deze heeft als datum de 12e).
-        console.log("Datestring: ", dateString);
+        items = localStorage.items && localStorage.items.length ? JSON.parse(localStorage.items) : []; 
+
+        //console.log("Checking...");
+        //console.log("Items date: ", items[getDate.getMonth()].items[14].date); //Dit is om even te vergelijken in de console. (deze heeft als datum de 12e).
+        //console.log("Datestring: ", dateString);
+   
+        console.log(items);
+
+
+        if(!(getDate.getMonth() in items))
+        {
+            $scope.message = "Nothing added yet."
+            return $scope.$apply;
+        }
+
         for (var i = items[getDate.getMonth()].items.length - 1; i >= 0; i--) {
             if(items[getDate.getMonth()].items[i].date == date || items[getDate.getMonth()].items[i].date == String(dateString))
             {
