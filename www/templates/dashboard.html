@@ -1,7 +1,40 @@
 
+<style>
+    .warp img{
+        position: absolute;
+        transform-origin: center;
+        animation: pulse 3s ease-in-out forwards;
+        z-index: 99999;
+        left: -120%;
+        top: -13%;
+    }
 
-<ion-view title="Dashboard">
-    <img src="../www/img/warp.png" alt="A Look at your future">
+    @keyframes pulse {
+        0%{
+
+            -webkit-transform: scale(1.0) ;
+            display: none;
+        }
+
+        80%{
+            opacity: 1;
+        }
+
+        100%{
+            opacity: 0;
+
+            -webkit-transform: scale(5.0) ;
+            -webkit-animation-play-state: paused;
+            visibility: hidden;
+        }
+    }
+</style>
+
+<ion-view title="Dashboard" >
+    <div class="warp">
+    <img style="background-color: red" src="../www/img/warp.png" alt="A Look at your future">
+    </div>
+
     <div class="bg" style="width: 100%; height: 100%;">
         <ion-content padding="'true'">
             <div ng-include src="'templates/icon-menu.html'"></div>
