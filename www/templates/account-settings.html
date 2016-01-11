@@ -45,15 +45,29 @@
                 <span>herinnerd worden om mijn gewicht in te vullen</span>
             </div>
 
-            <ion-list>
+            <ion-list style="display: none">
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Nauwlijks</ion-radio>
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Een keer per week</ion-radio>
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Meerdere keren per week</ion-radio>
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Elke dag</ion-radio>
             </ion-list>
             <label style="display: block;">
-                <input type="button" value="Opslaan" id="questions_submit" ng-click="" class="button button-balanced" style="border-color: #33cd5f;">
+                <input type="button" value="Opslaan" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
         </form>
+        <div class="list card">
+            <div class="item item-divider">BMI</div>
+            <div class="item item-body">
+                <div>
+                    <p>
+                        {{ bmi_result}}
+                    </p>
+                    <hr>
+                    <p style="font-size: 25px">
+                        {{ bmi }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

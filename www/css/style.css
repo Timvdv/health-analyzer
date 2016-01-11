@@ -234,8 +234,13 @@ h1
     min-height: 50px;
 }
 
-#about-page .card p {
-    text-align: justify;
-    padding: 0 20px 10px 20px;
+#bmi_result div{
+    display: inline-block;
+    width: 50%;
+    height: auto
+;
 }
 
+#bmi {
+    font-size: 40px;
+}
