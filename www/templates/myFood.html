@@ -1,6 +1,8 @@
 <ion-view title="My Food">
     <ion-content padding="'true'">
-        <div ng-include src="'templates/header-bar.html'"></div>
+        <div class="nav bar-stable bar-light">
+            <a href="#/" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+        </div>
         <ion-list class="has-header">
         <div class="datePicker">
             <button class="ion-ios-arrow-back" id="previousDay" ng-click="previousDay()"></button>
@@ -13,13 +15,13 @@
                     {{food.name}} <br>
                     {{food.description}}
             </ion-item>
-                    {{message}}
+            <div class="error-message">{{message}}</div>
         </ion-list>    
-        <div class="button-bar">
-            <a href="#/log" class="button button-stable button-block ">
-                Log je voedsel
-            </a>
-           
-        </div>
     </ion-content>
 </ion-view>
+<ion-footer-bar align-title="left" class="button-block">
+    <button id="totalCalories">{{totalCalories}} kcal total</button>
+    <a href="#/log" class="button button-balanced button-block  icon ion-android-add">
+        Add Food Items
+    </a>
+</ion-footer-bar>
