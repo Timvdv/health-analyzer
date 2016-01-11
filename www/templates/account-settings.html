@@ -1,0 +1,77 @@
+<ion-view title="account">
+    <ion-content padding="'true'">
+        <div class="bar bar-header bar-light">
+            <a href="#/settings" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
+            <h1 class="title" style="color: #9c9c9c;  text-transform: uppercase; font-size: 15px">Account</h1>
+        </div>
+        <form class="question_list" name="question_list" style="margin: 50px 0 0 20px">
+            <div>
+                <span>Naam</span>
+                <input type="text" id="questions_name" placeholder="" name="name" value="">
+            </div>
+
+            <div>
+                <span>Gewicht(Kg)</span>
+                <input type="text" id="questions_weight" placeholder="" name="weight">
+            </div>
+
+            <div>
+                <span>Lengte(Cm)</span>
+                <input type="text" id="questions_length" placeholder="" name="length">
+            </div>
+
+            <div>
+                <span>Geboortedatum</span>
+                <label>
+                    <input id="questions_date"  type="date" name="birthdate">
+                </label>
+            </div>
+
+            <div>
+                <span>Sportactiviteit</span>
+            </div>
+
+            <div>
+
+                <span>Ik wil om de</span>
+                <label>
+                    <select id="weight_memory">
+                        <option>Week</option>
+                        <option>Twee weken</option>
+                        <option>Drie weken</option>
+                        <option>Maand</option>
+                    </select>
+                </label>
+                <span>herinnerd worden om mijn gewicht in te vullen</span>
+            </div>
+
+            <ion-list style="display: none">
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Nauwlijks</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Een keer per week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Meerdere keren per week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Elke dag</ion-radio>
+            </ion-list>
+            <label style="display: block;">
+                <input type="button" value="Opslaan" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
+            </label>
+        </form>
+        <div class="list card" id="bmi-card">
+            <div class="item item-divider">BMI</div>
+            <div class="item item-body">
+                <div>
+                    <p style="font-size: 30px">
+                        <strong>{{ bmi }} </strong>
+                    </p>
+                    <hr>
+                    <p>
+                        <strong>{{bmi_result}}</strong> <br>
+                        Advies: {{ bmi_advice}}
+                    </p>
+                    <p>
+                        Lengte: <strong>{{ length}}m</strong> | Gewicht <strong>{{ weight }}kg</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

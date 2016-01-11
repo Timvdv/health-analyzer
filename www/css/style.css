@@ -222,6 +222,47 @@ h1
     color: #ffffff;
 }
 .checked{
-    background-color: "green";
+    background-color: #33cd5f;
+    border: 1px solid #ffffff;
+    
+}
+.datePicker button {
+    display: inline-block;
+    padding: 2%;
+    background-color: gray;
+    width:8%;
+    box-sizing: border-box;
+}
+.datePicker{
+    width:100%;
+    display: inline-block;
+}
+#nextDay{
+    float:right;
+}
+#date{
+    width:80%;
+    font-size:;
+    display: inline-block;
+    text-align: center;
 }
 
+#settings_page, #settings_page a{
+    text-align: center;
+    text-decoration: none;
+}
+
+#settings_page .card {
+    min-height: 50px;
+}
+
+#bmi_result div{
+    display: inline-block;
+    width: 50%;
+    height: auto
+;
+}
+
+#bmi {
+    font-size: 40px;
+}

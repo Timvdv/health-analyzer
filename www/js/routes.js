@@ -26,6 +26,12 @@ angular.module('app.routes', [])
                 controller: 'foodLoggerCtrl'
             })
 
+            .state('myfood', {
+                url: '/myfood',
+                templateUrl: 'templates/myFood.html',
+                controller: 'myFoodCtrl'
+            })
+
             .state('menu', {
                 url: '/menu',
                 templateUrl: 'templates/menu.html',
@@ -66,6 +72,18 @@ angular.module('app.routes', [])
                 url: '/questions',
                 templateUrl: 'templates/vragenLijst.html',
                 controller: 'questionController'
+            })
+
+            .state('about', {
+                url: '/about',
+                templateUrl: 'templates/about.html',
+                controller: 'aboutController'
+            })
+
+            .state('account', {
+                url: '/account',
+                templateUrl: 'templates/account-settings.html',
+                controller: 'accountController'
             })
         ;
 

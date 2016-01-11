@@ -1,16 +1,32 @@
 <ion-view title="settings">
     <ion-content padding="'true'">
         <div ng-include src="'templates/icon-menu.html'"></div>
-        <form class="list">
-            <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
-            <ion-radio>Radio</ion-radio>
-            <label class="item item-input">
-                <span class="input-label">Input</span>
-                <input type="text" placeholder="">
-            </label>
-            <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
-            <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
-            <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
-        </form>
+            <div id="settings_page">
+                <a href="#/account">
+                    <div class="card">
+                        <div class="item item-text-wrap"> Settings </div>
+                    </div>
+                </a>
+                <a href="#/about">
+                    <div class="card">
+                        <div class="item item-text-wrap"> About </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card">
+                        <div class="item item-text-wrap"> Tutorial </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card">
+                        <div class="item item-text-wrap"> Koppel FitBit </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="card">
+                        <div class="item item-text-wrap"> Koppel Hologram </div>
+                    </div>
+                </a>
+            </div>
     </ion-content>
 </ion-view>
