@@ -6,15 +6,6 @@ angular.module('app.services', [])
         {
             return [
             {
-                'month': 7,
-                'month_name': 'jul',
-                'year': 2015,
-                'calories': 521,
-                'health': 'good',
-                'water': 54,
-                'vitamins':  53
-            },
-            {
                 'month': 8,
                 'month_name': 'aug',
                 'year': 2015,
@@ -112,7 +103,16 @@ angular.module('app.services', [])
                 'health': 'good',
                 'water': 53,
                 'vitamins':  69
-            },             
+            },
+            {
+                'month': 7,
+                'month_name': 'jul',
+                'year': 2015,
+                'calories': 521,
+                'health': 'good',
+                'water': 54,
+                'vitamins':  53
+            },                         
             ];
         }
 
