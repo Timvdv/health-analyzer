@@ -73,6 +73,18 @@ angular.module('app.routes', [])
                 templateUrl: 'templates/vragenLijst.html',
                 controller: 'questionController'
             })
+
+            .state('about', {
+                url: '/about',
+                templateUrl: 'templates/about.html',
+                controller: 'aboutController'
+            })
+
+            .state('account', {
+                url: '/account',
+                templateUrl: 'templates/account-settings.html',
+                controller: 'accountController'
+            })
         ;
 
         // if none of the above states are matched, use this as the fallback

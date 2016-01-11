@@ -246,3 +246,23 @@ h1
     display: inline-block;
     text-align: center;
 }
+
+#settings_page, #settings_page a{
+    text-align: center;
+    text-decoration: none;
+}
+
+#settings_page .card {
+    min-height: 50px;
+}
+
+#bmi_result div{
+    display: inline-block;
+    width: 50%;
+    height: auto
+;
+}
+
+#bmi {
+    font-size: 40px;
+}
