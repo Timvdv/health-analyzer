@@ -37,6 +37,11 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
        $scope.currentMonth.person = $scope.currentMonth.calories > 500 ? $scope.images.Fat : $scope.images.Skinny;
 
        $scope.$apply;
+
+        $http.post("http://tvdv.me/fatsecret/post.php?calories="+calories+"&water="+water+"&vitamins="+vitamins).success(function(result)
+        {
+          //done.
+        });       
     };
 
 }]);
