@@ -1,45 +1,88 @@
-
 <style>
-    .warp img{
+
+    .text{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: 100%;
+
+    }
+
+    .text h3{
+        z-index: 9999999999;
+        animation: pulse2 3s ease-in-out forwards;
+
+    }
+
+    .warp img {
         position: absolute;
         transform-origin: center;
         animation: pulse 3s ease-in-out forwards;
         z-index: 99999;
-        left: -120%;
-        /* right: 20%; */
-        top: -13%;
+        width: 100%;
+        height: 113%;
+        top: -8%;
     }
 
     @keyframes pulse {
-        0%{
+        0% {
 
-            -webkit-transform: scale(1.0) ;
+            -webkit-transform: scale(1.0);
             display: none;
         }
 
-        80%{
+        80% {
             opacity: 1;
         }
 
-        100%{
+        100% {
             opacity: 0;
 
-            -webkit-transform: scale(5.0) ;
+            -webkit-transform: scale(3.0);
+            -webkit-animation-play-state: paused;
+            visibility: hidden;
+        }
+    }
+
+
+    @keyframes pulse2 {
+        0% {
+
+            -webkit-transform: scale(0.5);
+            display: none;
+        }
+
+        80% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+
+            -webkit-transform: scale(1);
             -webkit-animation-play-state: paused;
             visibility: hidden;
         }
     }
 </style>
 
-<ion-view title="Dashboard" >
+<ion-view title="Dashboard">
+
+    <div class="warp text">
+        <h3>Een kijkje in het jaar 2017</h3>
+    </div>
+
     <div class="warp">
-    <img style="background-color: red" src="../www/img/warp.png" alt="A Look at your future">
+        <img  src="../www/img/warp.png" alt="A Look at your future">
     </div>
 
     <div class="bg" style="width: 100%; height: 100%;">
         <ion-content padding="'true'">
             <div ng-include src="'templates/icon-menu.html'"></div>
-            <h2 style="text-align: center">My Profile</h2>
+            <h2 style="text-align: center">Mijn gezondheid in 2017</h2>
 
             <div style="width: 100%; display: flex; justify-content: center; position: relative">
                 <img class="fat-person" src="{{currentMonth.person}}"/>
@@ -49,10 +92,12 @@
                 {{currentMonth.vitamins}}%</h2> <a href="#/graph-heart"><img class="heart-Icon" src="{{images.Heart}}"/></a>
             </div>
             <div style="position: absolute; bottom: 130px; left:44px" class="item-graph"><h2 style="color: #0FA0CE">
-                {{currentMonth.water}}%</h2>   <a href="#/graph-liquid"><img class="droplet-Icon" src="{{images.Droplet}}"/></a>
+                {{currentMonth.water}}%</h2>   <a href="#/graph-liquid"><img class="droplet-Icon"
+                                                                             src="{{images.Droplet}}"/></a>
             </div>
             <div style="position: absolute; bottom: 30px; right:40px" class="item-graph"><h2 style="color: #ff4f70">
-                {{currentMonth.calories}}</h2><a href="#/graph-healthy"><img class="graph-icon" src="{{images.Graph}}"/> </a>
+                {{currentMonth.calories}}</h2><a href="#/graph-healthy"><img class="graph-icon" src="{{images.Graph}}"/>
+            </a>
             </div>
         </ion-content>
     </div>
@@ -62,12 +107,13 @@
     <div class="timeline-container">
         <div class="row">
             <hr>
-            <div ng-repeat="item in timeline" water="{{item.water}}" vitamins="{{item.vitamins}}" month="{{item.month}}" year="{{item.year}}" calories="{{item.calories}}" class="col col-10" ng-click="updateAvatar($event)">
+            <div ng-repeat="item in timeline" water="{{item.water}}" vitamins="{{item.vitamins}}" month="{{item.month}}"
+                 year="{{item.year}}" calories="{{item.calories}}" class="col col-10" ng-click="updateAvatar($event)">
                 <div class="circle" ng-class="item.month == currentMonth.month ? 'active' : '' ">
-                <div ng-if="item.month == 1" class="right-now">
-                    Nu
-                </div>
-                    
+                    <div ng-if="item.month == 1" class="right-now">
+                        Nu
+                    </div>
+
                 </div>
                 {{item.month_name}}
             </div>
