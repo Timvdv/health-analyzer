@@ -12,7 +12,7 @@ angular.module('app.controllers').controller('accountController', ['$scope', '$h
         var user_weight = user_data.weight;
         var user_length = user_data.length;
         var user_birthdate = user_data.birthdate;
-        //var user_sport = user_data.sport;
+        var user_sport = user_data.sport;
 
         var name = document.getElementById("questions_name");
         name.value = user_name;
@@ -35,15 +35,12 @@ angular.module('app.controllers').controller('accountController', ['$scope', '$h
         var weight = document.getElementById("questions_weight").value;
         var birthdate = document.getElementById("questions_date").value;
 
-        var sport = $scope.formData.questions_sport;
-        console.log(sport);
-
         var userData = {
             name: name,
             length: length,
             weight: weight,
             birthdate: birthdate,
-            sport: sport,
+            sport: user_sport,
             fitbit: false,
             hologram: false
         };
