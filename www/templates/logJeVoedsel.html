@@ -1,6 +1,8 @@
 <ion-view title="Log Your Food">
     <ion-content padding="'true'">
-        <div ng-include src="'templates/header-bar.html'"></div>
+        <div class="nav bar-stable bar-light">
+            <a href="#/myfood" class="button icon-left ion-chevron-left button-clear button-dark" ng-click="reload()">Back</a>
+        </div>
         <ion-list class="has-header">
             <label class="item item-input">
                 <span class="input-label">Search</span>
