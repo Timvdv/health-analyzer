@@ -2,10 +2,10 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
 {
     $scope.search = "";
     $scope.details = "no search yet";
-    var counter = 0;
-    var search = document.getElementById('search');
-    var countdown_interval = null;
-    var currentDate = new Date();
+    var counter = 0,
+        search = document.getElementById('search'),
+        countdown_interval = null,
+        currentDate = new Date();
     var itemList = [
     {
         'month': 'jan',

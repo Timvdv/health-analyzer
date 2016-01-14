@@ -13,7 +13,9 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     var dayFix = currentDay;
 
     var totalCalories = 0;
+    var totalFat = 0;
     var calorieButton = document.getElementById('totalCalories');
+    var fatButton = document.getElementById('totalFat');
 
 //===========================================================================================================
 // NUMBER FIX FUNCTION
@@ -58,7 +60,10 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         tempArray = [];
         $scope.dailyItems = "";
         $scope.totalCalories = 0;
+        $scope.totalFat = 0;
+
         totalCalories = 0;
+        totalFat = 0;
         if(localStorage['items'])
         {
             items = localStorage.items && localStorage.items.length ? JSON.parse(localStorage.items) : []; 
@@ -79,7 +84,9 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
                     
                     tempArray.push(items[getDate.getMonth()].items[i]);
                     totalCalories += items[getDate.getMonth()].items[i].calories;
+                    totalFat += items[getDate.getMonth()].items[i].fat;
                     $scope.totalCalories = totalCalories;
+                    $scope.totalFat = totalFat;
                     $scope.message = "";
                 }
                 else if(items[getDate.getMonth()].items[i].date != date || items[getDate.getMonth()].items[i].date != String(dateString))
@@ -94,6 +101,7 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         if(!$scope.dailyItems.length){
                     $scope.message = "Nothing added yet.";
                     $scope.totalCalories = 0;
+                    $scope.totalFat = 0;
         }
         $scope.$apply; 
         // $scope.calorieChecker($scope.totalCalories);
@@ -105,11 +113,14 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
 //===========================================================================================================
     $scope.calorieChecker = function(calories)
     {
-        if (calories >= 0 && calories <= 1249)
+        var fatAmount = calories / 100 * 30;
+        console.log(fatAmount);
+
+        if (calories >= 0 && calories <= 1249 || calories >= 4100)
         {
             calorieButton.className = "calorie-negative";
         }
-        if (calories >= 1250 && calories <= 2499)
+        if (calories >= 1250 && calories <= 2499 || calories >= 2900 && calories <= 4099)
         {
             calorieButton.className = "calorie-danger";
         }
@@ -117,13 +128,19 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         {
             calorieButton.className = "calorie-positive";
         }
-        if (calories >= 2900 && calories <= 4099)
+
+
+        if (calories >= fatAmount*0.95 && calories <= fatAmount*1.05)
         {
-            calorieButton.className = "calorie-danger";
+            fatButton.className = "calorie-positive";
         }
-        if (calories >= 4100)
+        if (calories >= fatAmount*0.80 && calories <= fatAmount*0.94 || calories >= fatAmount*1.06 && calories <= fatAmount*1.20)
         {
-            calorieButton.className = "calorie-negative";
+            fatButton.className = "calorie-danger";
+        }
+        if (calories >= fatAmount*0.65 || calories >= fatAmount*1.21)
+        {
+            fatButton.className = "calorie-negative";
         }
     };
 
