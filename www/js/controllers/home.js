@@ -3,6 +3,11 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
     console.log('homeCtrl1');
     $scope.location = $location.path();
 
+    if(!localStorage.user)
+    {
+        window.location = '#/questions';
+    }
+
     var get_user_data = localStorage.getItem('user');
     var user_data = JSON.parse(get_user_data);
 
@@ -23,7 +28,7 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
 
     if(bmi_calculation < 18.5) {
         bmi_result = "Ondergewicht";
-        bmi_advice = "je lijdt aan ondergewicht. Probeer wat meer te eten, maar probeer er wel voor te zorgen dat je gezond aankom. Zorg ervoor dat" +
+        bmi_advice = "je lijdt aan ondergewicht. Probeer wat meer te eten, maar probeer er wel voor te zorgen dat je gezond aankomt. Zorg ervoor dat" +
         " geen ongezonde dingen gaat eten.";
     }
     if(bmi_calculation >= 18.5 && bmi_calculation < 25) {
