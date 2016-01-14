@@ -6,24 +6,26 @@ angular.module('app.controllers').controller('accountController', ['$scope', '$h
     var get_user_data = localStorage.getItem('user');
     var user_data = JSON.parse(get_user_data);
 
-    var user_name = user_data.name;
-    var user_weight = user_data.weight;
-    var user_length = user_data.length;
-    var user_birthdate = user_data.birthdate;
-    //var user_sport = user_data.sport;
 
-    var name = document.getElementById("questions_name");
-    name.value = user_name;
+    if(localStorage.getItem('user') != null) {
+        var user_name = user_data.name;
+        var user_weight = user_data.weight;
+        var user_length = user_data.length;
+        var user_birthdate = user_data.birthdate;
+        var user_sport = user_data.sport;
 
-    var length = document.getElementById("questions_length");
-    length.value = user_length;
+        var name = document.getElementById("questions_name");
+        name.value = user_name;
 
-    var weight = document.getElementById("questions_weight");
-    weight.value = user_weight;
+        var length = document.getElementById("questions_length");
+        length.value = user_length;
 
-    var birthdate = document.getElementById("questions_date");
-    birthdate.value = user_birthdate;
+        var weight = document.getElementById("questions_weight");
+        weight.value = user_weight;
 
+        var birthdate = document.getElementById("questions_date");
+        birthdate.value = user_birthdate;
+    }
 
     $scope.formData = {};
 
@@ -33,15 +35,12 @@ angular.module('app.controllers').controller('accountController', ['$scope', '$h
         var weight = document.getElementById("questions_weight").value;
         var birthdate = document.getElementById("questions_date").value;
 
-        var sport = $scope.formData.questions_sport;
-        console.log(sport);
-
         var userData = {
             name: name,
             length: length,
             weight: weight,
             birthdate: birthdate,
-            sport: sport,
+            sport: user_sport,
             fitbit: false,
             hologram: false
         };
