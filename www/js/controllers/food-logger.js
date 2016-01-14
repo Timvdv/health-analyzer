@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', function($scope, $http)
+angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', '$location', function($scope, $http, $location)
 {
     $scope.search = "";
     $scope.details = "no search yet";
@@ -268,4 +268,9 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         console.log("LocalStorage:", localStorage['monthlyData']);
         console.log();
     };
-}]);
+    $scope.reload = function()
+    {
+        window.location.reload(true);
+        console.log("Reload functie!");
+    }
+}]); 
