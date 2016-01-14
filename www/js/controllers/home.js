@@ -3,6 +3,11 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
     console.log('homeCtrl1');
     $scope.location = $location.path();
 
+    if(!localStorage.user)
+    {
+        window.location = '#/questions';
+    }
+
     var get_user_data = localStorage.getItem('user');
     var user_data = JSON.parse(get_user_data);
 
@@ -23,17 +28,16 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
 
     if(bmi_calculation < 18.5) {
         bmi_result = "Ondergewicht";
-        bmi_advice = "je lijdt aan ondergewicht. Probeer wat meer te eten, maar probeer er wel voor te zorgen dat je gezond aankom. Zorg ervoor dat" +
+        bmi_advice = "je lijdt aan ondergewicht. Probeer wat meer te eten, maar probeer er wel voor te zorgen dat je gezond aankomt. Zorg ervoor dat" +
         " geen ongezonde dingen gaat eten.";
-        bmi_color.style.borderColor = "red";
     }
     if(bmi_calculation >= 18.5 && bmi_calculation < 25) {
         bmi_result = "Gezond gewicht";
-        bmi_advice = "Goed bezig! Je hebt een gezond gewicht. Probeer ervoor te zorgen dat je dit gewicht vasthoudt. Zorg ervoor dat je gezonde dingen blijft eten";
+        bmi_advice = "Goed bezig! Je hebt een gezond gewicht. Probeer ervoor te zorgen dat je dit gewicht vasthoudt. Zorg er wel voor dat je gezond blijft eten. Blijfen sporten kan natuurlijk ook geen kwaad!";
     }
     if(bmi_calculation >= 25 && bmi_calculation < 30) {
         bmi_result = "Overgewicht";
-        bmi_advice = "Je lijdt aan overgewicht. Je bent iets te zwaar. Probeer wat minder te eten of probeer meer gezond te eten";
+        bmi_advice = "Je lijdt aan overgewicht. Je bent iets te zwaar. Probeer wat minder te eten of probeer meer gezond te eten. Je kan er ook aan denken om wat meer te gaan sporten.";
     }
     if(bmi_calculation >= 30 && bmi_calculation < 35) {
         bmi_result = "Obesitas";

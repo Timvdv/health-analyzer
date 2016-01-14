@@ -26,23 +26,20 @@
                     <input id="questions_date"  type="date" name="birthdate">
                 </label>
             </div>
-
             <div>
-                <span>Sportactiviteit</span>
-            </div>
-
-            <div>
-
-                <span>Ik wil om de</span>
+                <span>Herrinering gewicht: Periode </span>
                 <label>
-                    <select id="weight_memory">
-                        <option>Week</option>
-                        <option>Twee weken</option>
-                        <option>Drie weken</option>
-                        <option>Maand</option>
+                    <select style="display: block; margin-top: 15px; margin-bottom: 15px" id="weight_memory">
+                        <option> Week</option>
+                        <option> Twee weken</option>
+                        <option> Drie weken</option>
+                        <option> Maand</option>
                     </select>
                 </label>
-                <span>herinnerd worden om mijn gewicht in te vullen</span>
+                <label>
+                    <span>Herringering gewicht: Tijd</span>
+                    <input type="time" placeholder="" name="weight_time">
+                </label>
             </div>
 
             <ion-list style="display: none">
@@ -55,23 +52,5 @@
                 <input type="button" value="Opslaan" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
         </form>
-        <div class="list card" id="bmi-card">
-            <div class="item item-divider">BMI</div>
-            <div class="item item-body">
-                <div>
-                    <p style="font-size: 30px">
-                        <strong>{{ bmi }} </strong>
-                    </p>
-                    <hr>
-                    <p>
-                        <strong>{{bmi_result}}</strong> <br>
-                        Advies: {{ bmi_advice}}
-                    </p>
-                    <p>
-                        Lengte: <strong>{{ length}}m</strong> | Gewicht <strong>{{ weight }}kg</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
     </ion-content>
 </ion-view>

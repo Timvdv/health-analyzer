@@ -59,32 +59,37 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         $scope.dailyItems = "";
         $scope.totalCalories = 0;
         totalCalories = 0;
-
-        items = localStorage.items && localStorage.items.length ? JSON.parse(localStorage.items) : []; 
+        if(localStorage['items'])
+        {
+            items = localStorage.items && localStorage.items.length ? JSON.parse(localStorage.items) : []; 
+        }
+        
 
         // if(!(getDate.getMonth() in items))
         // {
         //     $scope.message = "Nothing added yet."
         //     return $scope.$apply;
         // }
-
-        for (var i = items[getDate.getMonth()].items.length - 1; i >= 0; i--) {
-            if(items[getDate.getMonth()].items[i].date == date || items[getDate.getMonth()].items[i].date == String(dateString))
-            {
-                console.log("true!");
-                
-                tempArray.push(items[getDate.getMonth()].items[i]);
-                totalCalories += items[getDate.getMonth()].items[i].calories;
-                $scope.totalCalories = totalCalories;
-                $scope.message = "";
-            }
-            else if(items[getDate.getMonth()].items[i].date != date || items[getDate.getMonth()].items[i].date != String(dateString))
-            {
-                console.log("False!");
-                $scope.dailyItems = "";            
-                $scope.$apply;
-            }
-        };
+        if(localStorage['items'])
+        {
+            for (var i = items[getDate.getMonth()].items.length - 1; i >= 0; i--) {
+                if(items[getDate.getMonth()].items[i].date == date || items[getDate.getMonth()].items[i].date == String(dateString))
+                {
+                    console.log("true!");
+                    
+                    tempArray.push(items[getDate.getMonth()].items[i]);
+                    totalCalories += items[getDate.getMonth()].items[i].calories;
+                    $scope.totalCalories = totalCalories;
+                    $scope.message = "";
+                }
+                else if(items[getDate.getMonth()].items[i].date != date || items[getDate.getMonth()].items[i].date != String(dateString))
+                {
+                    console.log("False!");
+                    $scope.dailyItems = "";            
+                    $scope.$apply;
+                }
+            };
+        }
         $scope.dailyItems = tempArray;
         if(!$scope.dailyItems.length){
                     $scope.message = "Nothing added yet.";

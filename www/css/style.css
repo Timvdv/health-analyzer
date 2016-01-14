@@ -160,10 +160,10 @@ h1
 }
 
 .question_list span{
-    font-size: 12px;
+    font-size: 15px;
 }
 
-.question_list input {
+.question_list input, .question_list select {
     text-transform: uppercase;
     color: #9c9c9c;
     font-weight: lighter;
@@ -173,6 +173,10 @@ h1
     border-bottom: 1px #9c9c9c solid;
     padding-top: 6px;
     height: 50px;
+}
+
+.question_list select  {
+    border-bottom: 1px #9c9c9c solid;
 }
 
 ::-webkit-datetime-edit-text { color: #9c9c9c; font-weight: lighter; padding: 2px }
@@ -261,6 +265,8 @@ h1
     min-height: 50px;
 }
 
+<<<<<<< HEAD
+=======
 #bmi_result div{
     display: inline-block;
     width: 50%;
@@ -299,3 +305,4 @@ h1
     background-color: #33cd5f;
     border-radius:2px;
 }
+>>>>>>> 5fa2e2b07224de24a45a25bc43adbe3fd15f1331

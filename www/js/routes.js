@@ -85,6 +85,18 @@ angular.module('app.routes', [])
                 templateUrl: 'templates/account-settings.html',
                 controller: 'accountController'
             })
+
+            .state('fitbit', {
+                url: '/fitbit',
+                templateUrl: 'templates/fitbit.html',
+                controller: 'fitbit'
+            })
+
+            .state('hologram', {
+                url: '/hologram',
+                templateUrl: 'templates/hologram.html',
+                controller: 'hologram'
+            })
         ;
 
         // if none of the above states are matched, use this as the fallback
