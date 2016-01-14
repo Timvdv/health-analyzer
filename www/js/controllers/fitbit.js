@@ -6,7 +6,7 @@ angular.module('app.controllers').controller('fitbit', ['$scope','$http','$timeo
 
     function redirect() {
         $timeout(function() {
-            $location.path('#/settings');
+            window.location = '#/settings';
         },2000);
     }
 

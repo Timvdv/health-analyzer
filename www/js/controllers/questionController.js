@@ -26,7 +26,7 @@ angular.module('app.controllers').controller('questionController', ['$scope', '$
         localStorage.setItem('user',  JSON.stringify(userData));
         var retrievedObject = localStorage.getItem('user');
         console.log('retrievedObject: ', JSON.parse(retrievedObject));
-        $location.path('#/home');
+        window.location = '#/home';
     };
 
     console.log('questionController');
