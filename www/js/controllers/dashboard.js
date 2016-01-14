@@ -23,9 +23,7 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
 
     $scope.updateAvatar = function(el)
     {
-      console.log(el);
-
-        var attr = el.target.attributes,
+        var attr = (el.target.attributes && el.target.attributes.calories) ? el.target.attributes : el.target.parentElement.attributes,
                calories = attr.calories.value,
                month = attr.month.value,
                year = attr.year.value,
