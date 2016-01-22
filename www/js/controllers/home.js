@@ -27,27 +27,26 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
     bmi_calculation = bmi_calculation.toFixed();
 
     if(bmi_calculation < 18.5) {
-        bmi_result = "Ondergewicht";
-        bmi_advice = "je lijdt aan ondergewicht. Probeer wat meer te eten, maar probeer er wel voor te zorgen dat je gezond aankomt. Zorg ervoor dat" +
-        " geen ongezonde dingen gaat eten.";
+        bmi_result = "Underweight";
+        bmi_advice = "You have underweight. Try to eat every two hours some small things, but make sure you eat health things(like yogurt). So you will gain weight in a healthy way."
     }
     if(bmi_calculation >= 18.5 && bmi_calculation < 25) {
-        bmi_result = "Gezond gewicht";
-        bmi_advice = "Goed bezig! Je hebt een gezond gewicht. Probeer ervoor te zorgen dat je dit gewicht vasthoudt. Zorg er wel voor dat je gezond blijft eten. Blijfen sporten kan natuurlijk ook geen kwaad!";
+        bmi_result = "Healthy weight";
+        bmi_advice = "Good job! You have a healthy weight. Try to keep this weight. But keep eating healthy food and stay away from the unhealthy food. Also it helps, when you keep working out!";
     }
     if(bmi_calculation >= 25 && bmi_calculation < 30) {
-        bmi_result = "Overgewicht";
-        bmi_advice = "Je lijdt aan overgewicht. Je bent iets te zwaar. Probeer wat minder te eten of probeer meer gezond te eten. Je kan er ook aan denken om wat meer te gaan sporten.";
+        bmi_result = "Overweight";
+        bmi_advice = "You are overweight. You are a little bit to heavy. Try to eat less or try step over to some healthy food. Besides that, you can also consider to work out a little more";
     }
     if(bmi_calculation >= 30 && bmi_calculation < 35) {
-        bmi_result = "Obesitas";
-        bmi_advice = "Je lijdt aan obesitas en bent daarom te zwaar voor je gewicht. Probeer meer te spoten en let goed op je eten. Zorg ervoor " +
-        "dat je een voedingspatroon voor een lange tijd kan volhouden";
+        bmi_result = "Obesity";
+        bmi_advice = "You have obesity, so you are to heavy. Try to eat less and make sure you eat healthy food. We also think that you have to workout to lose some weight." +
+        "Make sure that you use this eat pattern for a good amount of time, otherwise the chance to go back to unhealthy food is big";
     }
     if(bmi_calculation >= 35) {
-        bmi_result = "Extreme obesitas";
-        bmi_advice = "Oei.. je lijdt aan extreme obesitas. Dat is niet goed! Je bent veel te zwaar en wij raden je aan om contact op te nemen " +
-        "met een huisarts om te kijken wat er gedaan kan worden. Een maagverkleining kan tot deze opties behoren.";
+        bmi_result = "Extreme obesity";
+        bmi_advice = "Oops.. you have extremely obesity. That is not good! You are way to heavy and we recommend you to go to your family doctor. " +
+        "Take some advice from your family doctor, because this is a dangerous situation.";
     }
 
     $scope.weight = user_weight;
