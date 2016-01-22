@@ -11,7 +11,7 @@ angular.module('app.controllers').controller('hologram', ['$scope','$http','$tim
     }
 
     $timeout(function() {
-        $scope.connected = 'Je bent succesvol verbonden met je Hologram';
+        $scope.connected = 'You are successfully connected with your Hologram';
         var fitbit = document.getElementById('icon-check-hologram');
         fitbit.className = 'icon ion-checkmark-circled dark';
         redirect();

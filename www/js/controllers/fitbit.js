@@ -11,7 +11,7 @@ angular.module('app.controllers').controller('fitbit', ['$scope','$http','$timeo
     }
 
     $timeout(function() {
-        $scope.connected = 'Je bent succesvol verbonden met je Fitbit';
+        $scope.connected = 'You are successfully connected with your Fitbit';
         var fitbit = document.getElementById('icon-check-fitbit');
         fitbit.className = 'icon ion-checkmark-circled dark';
         redirect();
