@@ -1,0 +1,4 @@
+angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', function($scope, $http)
+{
+	console.log("hoi");
+}]);

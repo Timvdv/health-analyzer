@@ -8,7 +8,7 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
         window.location = '#/questions';
     }
 
-    var get_user_data = localStorage.getItem('user');
+    var get_user_data = localStorage.getItem('user');   
     var user_data = JSON.parse(get_user_data);
 
     var user_weight = 0;

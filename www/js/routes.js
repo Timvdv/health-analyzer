@@ -97,6 +97,12 @@ angular.module('app.routes', [])
                 templateUrl: 'templates/hologram.html',
                 controller: 'hologram'
             })
+
+            .state('reset', {
+                url: '/reset',
+                templateUrl: '',
+                controller: 'resetCtrl'
+            })
         ;
 
         // if none of the above states are matched, use this as the fallback

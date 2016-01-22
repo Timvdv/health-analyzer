@@ -111,9 +111,9 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
 //===========================================================================================================
 // CALORIE CHECKER FUNCTION
 //===========================================================================================================
-    $scope.calorieChecker = function(calories)
+    $scope.calorieChecker = function(calories, fat)
     {
-        var fatAmount = calories / 100 * 30;
+        var fatAmount = (calories / 100 * 30)/9;
         console.log(fatAmount);
 
         if (calories >= 0 && calories <= 1249 || calories >= 4100)
@@ -130,21 +130,31 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         }
 
 
-        if (calories >= fatAmount*0.95 && calories <= fatAmount*1.05)
+        if (fat >= (fatAmount*0.95) && fat <= (fatAmount*1.05))
         {
             fatButton.className = "calorie-positive";
+            console.log("Positief!");
+            console.log("min:", (fatAmount*0.95));
+            console.log("max:", (fatAmount*1.05));
         }
-        if (calories >= fatAmount*0.80 && calories <= fatAmount*0.94 || calories >= fatAmount*1.06 && calories <= fatAmount*1.20)
+        if (fat >= (fatAmount*0.80) && fat <= (fatAmount*0.94) || fat >= (fatAmount*1.06) && fat <= (fatAmount*1.20))
         {
             fatButton.className = "calorie-danger";
+            console.log("Watch those calories!");
+            console.log("min:", (fatAmount*0.80));
+            console.log("max:", (fatAmount*0.94));
+            console.log("min:", (fatAmount*1.06));
+            console.log("max:", (fatAmount*1.20));
         }
-        if (calories >= fatAmount*0.65 || calories >= fatAmount*1.21)
+        if (fat <= (fatAmount*0.65) || fat >= (fatAmount*1.21))
         {
             fatButton.className = "calorie-negative";
         }
+        console.log(fat);
     };
 
-    $scope.calorieChecker($scope.totalCalories);
+
+    $scope.calorieChecker($scope.totalCalories, $scope.totalFat);
 //===========================================================================================================
 // PREVIOUS DAY FUNCTION
 //=========================================================================================================== 
@@ -157,7 +167,7 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         dateContainer.innerHTML = dateString;
         
         $scope.checkForMatch(String(dateString));
-        $scope.calorieChecker($scope.totalCalories);
+        $scope.calorieChecker($scope.totalCalories, $scope.totalFat);
     };
 
 //===========================================================================================================
@@ -172,6 +182,6 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         dateContainer.innerHTML = dateString;
 
         $scope.checkForMatch(String(dateString));
-        $scope.calorieChecker($scope.totalCalories);
+        $scope.calorieChecker($scope.totalCalories, $scope.totalFat);
     };
 }]);
