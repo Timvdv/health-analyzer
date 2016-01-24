@@ -6,18 +6,20 @@
     
     <ion-content padding="'true'">
         <form class="question_list" style="margin: 50px 0 0 20px" >
+            <div class="error" ng-if="error.error" style="color:red"><br>{{error.message}}</div>
+
             <div>
                 <span>What is your first name?</span>
                 <input ng-model="questions_name" type="text" id="questions_name" placeholder="" name="name">
             </div>
 
             <div>
-                <span>What is your weight? (Kg)</span>
+                <span>What is your weight? (Kg, eg: 84)</span>
                 <input type="text" id="questions_weight" placeholder="" name="weight">
             </div>
 
             <div>
-                <span>What is your length?(Cm)</span>
+                <span>What is your length?(Cm, eg: 1.82)</span>
                 <input type="text" id="questions_length" placeholder="" name="length">
             </div>
 

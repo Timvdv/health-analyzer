@@ -3,6 +3,7 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
     console.log('homeCtrl1');
     $scope.location = $location.path();
     localStorage.animate = true;
+    
     if(!localStorage.user)
     {
         window.location = '#/questions';
@@ -19,6 +20,8 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
         user_weight = user_data.weight;
         user_length = user_data.length;
     }
+
+    var length = user_length;
 
     var bmi_result;
     var bmi_advice;
@@ -49,8 +52,10 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
         "Take some advice from your family doctor, because this is a dangerous situation.";
     }
 
+    console.log(user_length);
+    console.log(String(user_length).length);
     $scope.weight = user_weight;
-    $scope.length = user_length;
+    $scope.length = String(user_length).length == 3 ? user_length + "0" : user_length;
     $scope.bmi_result = bmi_result;
     $scope.bmi = bmi_calculation;
     $scope.bmi_advice = bmi_advice;
