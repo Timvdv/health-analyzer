@@ -329,11 +329,27 @@ a
     border-radius:2px;
     color:white;
 }
-.picked span
+.picked .spanChild
 {
     width:80%;
     display: inline-block;
     text-overflow:ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.clicked-count
+{
+    display: none;
+    height: 43px;
+    border-left: 1px solid #28A54C;
+    margin-left: 20px;
+    padding-left: 15px;
+    float: right;
+    padding-top: 11px;
+}
+
+.picked .clicked-count
+{
+    display: block;
 }

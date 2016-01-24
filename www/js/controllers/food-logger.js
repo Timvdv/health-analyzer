@@ -232,12 +232,22 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
             fat = parseInt(regexFat[1]);
         }
         var element = event.target;
+
         if(element.className == "spanChild ng-binding")
         {
             console.log(element.className);
             element = element.parentElement;
         }
+
         element.className += " picked";
+
+        var clicked = parseInt(element.dataset.click_count);
+        var increment_clicked = clicked += 1;
+        element.dataset.click_count = increment_clicked;
+
+        var closest_el = closest(element);
+
+        element.children[1].innerHTML = element.dataset.click_count;    
 
         itemList[currentDate.getMonth()].items.push({
             "id": id,
@@ -289,3 +299,18 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         doneButton.style.display = "block";
     };
 }]); 
+
+function closest(elem) {
+    if( elem.className.indexOf("clicked-count") ) {
+        return elem;
+    } 
+
+    var parent = elem.parentNode;
+
+    for(var i = 0; i< parent.children.length; i++ ) {
+        if( parent.children[i].className.indexOf("non-unique-identifier")!=-1)  {
+            return parent.children[i];
+        }
+    }
+    return closest(parent);
+}
