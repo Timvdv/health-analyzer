@@ -6,6 +6,8 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         search = document.getElementById('search'),
         countdown_interval = null,
         currentDate = new Date();
+        currentItems = [];
+    $scope.currentItems = "";
     var itemList = [
     {
         'month': 'jan',
@@ -194,11 +196,9 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     {
         clearInterval(countdown_interval);
         counter = 4;
-        //console.log(counter);
         countdown_interval = setInterval(function(){
             if(counter>0){
                 counter--;
-                console.log(counter);
             } else{
                 console.log("Searching...");
                 clearInterval(countdown_interval);
@@ -208,16 +208,14 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     };
 
     // WORK IN PROGRESS.
-    $scope.addItem = function (id, name, type, description, url)
+    $scope.addItem = function (event, id, name, type, description, url)
     {
         if(firstClick == true && localStorage["items"]){
             itemList = JSON.parse(localStorage["items"]);    
             //localStorage["items"] = "";
-            console.log("Firstclick :", firstClick);
         } 
 
         firstClick = false;
-        console.log("Firstclick :", firstClick);
 
         var cal = 0;
         var fat = 0;
@@ -233,6 +231,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         {
             fat = parseInt(regexFat[1]);
         }
+        event.target.className += " calorie-positive";
 
         itemList[currentDate.getMonth()].items.push({
             "id": id,
@@ -243,15 +242,20 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
             "date": currentDate.toJSON().slice(0,10),
             "calories": cal,
             "fat": fat
-        });
+        }); 
+        currentItems.push(name);
+        $scope.currentItems = currentItems;
+        $scope.$apply;
+        console.log("Scope: ", $scope.currentItems);
+        $scope.showButton();
+    };
 
-        console.log("Calories:", cal);
-        console.log("Fat:", fat);
-
+    $scope.toLocalStorage = function()
+    {
         localStorage["items"] = JSON.stringify(itemList);        
         console.log("LocalStorage :",JSON.parse(localStorage["items"]));
         $scope.addMonthToYear();
-    };
+    }
 
     $scope.addMonthToYear = function ()
     {
@@ -259,18 +263,23 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
 
         for (var i = currentMonth.length - 1; i >= 0; i--) {
             var month = currentMonth[i];  
-            // "Per 100g - Calories: 254kcal | Fat: 15.92g | Carbs: 2.77g | Protein: 24.26g"
             return_data[currentDate.getMonth()].calories += month.calories;
             return_data[currentDate.getMonth()].fat += month.fat;
             localStorage['monthlyData'] = JSON.stringify(return_data);
             //$scope.timeline[currentDate.getMonth()].calories = return_data.calories;
         };
-        console.log("LocalStorage:", localStorage['monthlyData']);
-        console.log();
+        $scope.reload();
     };
     $scope.reload = function()
     {
         window.location.reload(true);
-        console.log("Reload functie!");
+        $location.path('#/myfood');  
     }
+
+    $scope.showButton = function()
+    {
+        console.log("showButton.");
+        var doneButton = document.getElementById('doneButton');
+        doneButton.style.display = "block";
+    };
 }]); 

@@ -1,5 +1,6 @@
 angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '$location', function($scope, $http, $location)
 {
+    
     var getDate = new Date();
     var currentDate = getDate.toJSON().slice(0,10);
     var currentMonth = getDate.getMonth()+1;
