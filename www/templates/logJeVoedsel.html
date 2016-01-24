@@ -2,7 +2,6 @@
     <ion-content padding="'true'">
         <div class="nav bar-stable bar-light">
             <a href="#/myfood" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
-            <button align-title="right" class="button button-light">My Items (WORK IN PROGRESS)</button>
         </div>
         <ion-list class="has-header">
             <label class="item item-input">
@@ -16,9 +15,10 @@
                 food_name="{{food.name}}"
                 food_type="{{food.type}}"
                 food_url="{{food.url}}"
+                click_count="0"
                 class="icon ion-android-add" ng-click="addItem($event, food.food_id, food.food_name, food.food_type, food.food_description, food.food_url)" >
-                    {{food.food_name}} <br>
-                    {{food.food_description}}
+                    <span class="spanChild">{{food.food_name}}<br>
+                    {{food.food_description}}</span><span class="clickCounter">| {{click_count}}x</span>
             </ion-item>
         </ion-list>
         <!-- <button class="button button-stable button-block ">Nieuwe set</button> -->
