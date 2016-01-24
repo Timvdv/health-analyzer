@@ -2,7 +2,7 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
 {
     console.log('homeCtrl1');
     $scope.location = $location.path();
-
+    localStorage.animate = true;
     if(!localStorage.user)
     {
         window.location = '#/questions';

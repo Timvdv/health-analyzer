@@ -1,9 +1,7 @@
 angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http', '$location', "timeline", function($scope, $http, $location, timeline)
 {
-
     console.log('dashboardCtrl');
-    $scope.location = $location.path();
-    
+    $scope.location = $location.path();   
 
     $scope.images = {
             Droplet: "img/Droplet-Icon.png",
@@ -46,4 +44,15 @@ angular.module('app.controllers').controller('dashboardCtrl', ['$scope', '$http'
         });       
     };
 
+    $scope.animate = function()
+    {
+        //if route comes from sub page
+        if(localStorage.animate == "false")
+          return false;
+        
+        localStorage.animate = true;
+      
+        //else
+        return true;
+    };
 }]);

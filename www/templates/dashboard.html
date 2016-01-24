@@ -71,18 +71,23 @@
 
 <ion-view title="Dashboard">
 
+<span ng-if="animate()">
     <div class="warp text">
-        <h3>Een kijkje in het jaar 2017</h3>
+        <h3>
+                Configuring Time Machine... <br><br>
+                <strong>Welcome in 2017</strong>
+        </h3>
     </div>
 
     <div class="warp">
         <img  src="../www/img/warp.png" alt="A Look at your future">
     </div>
+</span>
 
     <div class="bg" style="width: 100%; height: 100%;">
         <ion-content padding="'true'">
             <div ng-include src="'templates/icon-menu.html'"></div>
-            <h2 style="text-align: center">Mijn gezondheid in 2017</h2>
+            <h2 style="text-align: center">Health in 2017</h2>
 
             <div style="width: 100%; display: flex; justify-content: center; position: relative">
                 <img class="fat-person" src="{{currentMonth.person}}"/>

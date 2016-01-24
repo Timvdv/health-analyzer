@@ -3,6 +3,8 @@ angular.module('app.controllers').controller('graphWaterCtrl', ['$scope', '$http
     console.log('graphWatertrl');
     $scope.location = $location.path();
 
+    localStorage.animate = false;
+    
     var dataBars = {
         labels: ["December", "Toekomst"],
         datasets: [

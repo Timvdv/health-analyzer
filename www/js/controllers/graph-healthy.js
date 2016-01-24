@@ -3,8 +3,7 @@ angular.module('app.controllers').controller('graphHealthyCtrl', ['$scope', '$ht
     console.log('graphCtrl1');
     $scope.location = $location.path();
 
-
-
+    localStorage.animate = false;
 
     var data = {
         labels: ["December","January", "February", "March"],
