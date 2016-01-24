@@ -216,7 +216,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         } 
 
         firstClick = false;
-
+        
         var cal = 0;
         var fat = 0;
         var caloriesRegex = /Calories:\s(\d+)/ig;
@@ -231,7 +231,13 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         {
             fat = parseInt(regexFat[1]);
         }
-        event.target.className += " calorie-positive";
+        var element = event.target;
+        if(element.className == "spanChild ng-binding")
+        {
+            console.log(element.className);
+            element = element.parentElement;
+        }
+        element.className += " picked";
 
         itemList[currentDate.getMonth()].items.push({
             "id": id,
@@ -273,7 +279,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     $scope.reload = function()
     {
         window.location.reload(true);
-        $location.path('#/myfood');  
+              
     }
 
     $scope.showButton = function()

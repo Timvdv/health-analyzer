@@ -321,3 +321,19 @@ a
 .positive{
     color: #33cd5f;
 }
+
+.picked{
+    border: 1px solid #28a54c;
+    border-color: #28a54c;
+    background-color: #33cd5f;
+    border-radius:2px;
+    color:white;
+}
+.picked span
+{
+    width:80%;
+    display: inline-block;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
