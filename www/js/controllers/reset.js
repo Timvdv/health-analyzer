@@ -2,6 +2,6 @@ angular.module('app.controllers').controller('resetCtrl', ['$scope', '$http', '$
 {
 	console.log("LocalStorage has been cleared!");
 	localStorage.clear(); 
-	window.location.reload(true);
-	$location.path('#/home');  
+	$location.path('#/home');
+	window.location.reload(true);  
 }]);
