@@ -3,6 +3,8 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
     console.log('graphCtrl1');
     $scope.location = $location.path();
 
+    localStorage.animate = false;
+    
         var data = {
             labels: ["December","Toekomst"],
             datasets: [
