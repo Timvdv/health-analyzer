@@ -352,3 +352,9 @@ a
 {
     display: block;
 }
+
+
+.welcomePage
+{
+    background: url('../img/HealthWizard.png');
+}

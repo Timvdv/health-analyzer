@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', '$location', "statusMessage", function($scope, $http, $location, statusMessage)
+angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', '$location', '$rootScope', "statusMessage", function($scope, $http, $location, $rootScope,statusMessage)
 {
     $scope.search = "";
     $scope.details = "no search yet";
@@ -183,18 +183,30 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
 
     if(localStorage['status'] == "true")
     {
+        console.log("hoi");
         $scope.statusMessage = "Your food has been added.";
         localStorage['status'] = "false";
     } else
     {
-        $scope.statusMessage = statusMessage.emptyMessage();
+        $scope.statusMessage = "";
     }
+   //  $scope.$watch('statusMessage', function() {
+   //      console.log("Message has changed: ", $scope.statusMessage)
+   //      if(localStorage['status'] == "true")
+   //      {
+   //          console.log("hoi");
+   //          $scope.statusMessage = statusMessage.changeStatusMessage();
+   //          localStorage['status'] = "false";
+   //      } else
+   //      {
+   //          $scope.statusMessage = "";
+   //      }
+   // });
 
     $scope.searchChange = function (event)
     {
         $http.post("http://tvdv.me/fatsecret/s/search.php?food="+event.search).success(function(result)
         {
-            console.log(result.food);
             $scope.details = result.food;
             $scope.$apply;
         });
@@ -308,6 +320,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         var doneButton = document.getElementById('doneButton');
         doneButton.style.display = "block";
     };
+
 }]); 
 
 function closest(elem) {

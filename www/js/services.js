@@ -11,8 +11,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 521,
                 'health': 'good',
-                'water': "+12",
-                'vitamins':  "+13"
+                'water': "-30",
+                'vitamins':  "-23"
             },
             {
                 'month': 9,
@@ -20,8 +20,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 531,
                 'health': 'good',
-                'water': "+8",
-                'vitamins':  "+4"
+                'water': "-25",
+                'vitamins':  "-22"
             },
             {
                 'month': 10,
@@ -29,8 +29,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 421,
                 'health': 'good',
-                'water': "+3",
-                'vitamins':  "-2"
+                'water': "+11",
+                'vitamins':  "+21"
             },
             {
                 'month': 11,
@@ -38,8 +38,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 721,
                 'health': 'good',
-                'water': "+1",
-                'vitamins':  "+6"
+                'water': "-45",
+                'vitamins':  "-40"
             },
             {
                 'month': 12,
@@ -47,8 +47,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': "+2",
-                'vitamins':  "-4"
+                'water': "-26",
+                'vitamins':  "-34"
             },
              {
                 'month': 1,
@@ -56,8 +56,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 321,
                 'health': 'good',
-                'water': "+5",
-                'vitamins': "+10"
+                'water': "+19",
+                'vitamins': "+20"
             },
             {
                 'month': 2,
@@ -65,17 +65,17 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': "-2",
-                'vitamins':  "-3"
+                'water': "-29",
+                'vitamins':  "-31"
             },
             {
                 'month': 3,
-                'month_name': 'ma',
+                'month_name': 'mar',
                 'year': 2015,
                 'calories': 532,
                 'health': 'good',
-                'water': "+14",
-                'vitamins':  "+3"
+                'water': "-24",
+                'vitamins':  "-28"
             },
             {
                 'month': 4,
@@ -83,17 +83,17 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 513,
                 'health': 'good',
-                'water': "+10",
-                'vitamins':  "-2"
+                'water': "-19",
+                'vitamins':  "-21"
             },
             {
                 'month': 5,
-                'month_name': 'mei',
+                'month_name': 'ma',
                 'year': 2015,
                 'calories': 1245,
                 'health': 'good',
-                'water': "-6",
-                'vitamins':  "+4"
+                'water': "-60",
+                'vitamins':  "-78"
             },
             {
                 'month': 6,
@@ -101,8 +101,8 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 531,
                 'health': 'good',
-                'water': "+4",
-                'vitamins':  "+6"
+                'water': "-28",
+                'vitamins':  "-30"
             },
             {
                 'month': 7,
@@ -110,12 +110,11 @@ angular.module('app.services', [])
                 'year': 2015,
                 'calories': 521,
                 'health': 'good',
-                'water': "+19",
-                'vitamins':  "+20"
+                'water': "-19",
+                'vitamins':  "-20"
             },                         
             ];
         }
-
         function getCurrentMonth()
         {
             var all_data = getAll(),
@@ -138,26 +137,19 @@ angular.module('app.services', [])
 
 .service('statusMessage', [function(){
     var statusMessage = "";
-    function setMessage()
+    function changeStatusMessage()
     {
-        statusMessage = "Your food has been added.";
+        if(statusMessage == "")
+        {
+            statusMessage = "Your food has been added.";
+        } else
+        {
+            statusMessage = "";
+        }
         return statusMessage;
     }
-    function emptyMessage()
-    {
-        statusMessage = "";
-        return statusMessage;
-    }
-    function showMessage()
-    {
-        return statusMessage;
-    }
-
     return {
-        setMessage: setMessage,
-        emptyMessage: emptyMessage,
-        showMessage: showMessage
+        changeStatusMessage: changeStatusMessage
     }
-
 }]);
 

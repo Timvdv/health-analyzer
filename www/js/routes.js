@@ -103,6 +103,11 @@ angular.module('app.routes', [])
                 templateUrl: '',
                 controller: 'resetCtrl'
             })
+            .state('welcome', {
+                url: '/welcome',
+                templateUrl: 'templates/welcome.html',
+                controller: 'welcomeCtrl'
+            })
         ;
 
         // if none of the above states are matched, use this as the fallback

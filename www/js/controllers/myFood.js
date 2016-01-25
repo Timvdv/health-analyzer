@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '$location', "statusMessage", function($scope, $http, $location, statusMessage)
+angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '$location', '$rootScope', "statusMessage", function($scope, $http, $location, $rootScope, statusMessage)
 {
     var getDate = new Date();
     var currentDate = getDate.toJSON().slice(0,10);
@@ -203,7 +203,10 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
 //=========================================================================================================== 
     $scope.changeStatus = function()
     {
-        localStorage['status'] == "false";
-        statusMessage.emptyMessage();
+        // if(statusMessage.changeStatusMessage == "Your food has been added.")
+        // {
+        //     statusMessage.changeStatusMessage(); 
+        // }
+        // console.log(statusMessage.changeStatusMessage());
     }
 }]);

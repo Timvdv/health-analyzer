@@ -6,7 +6,7 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
     
     if(!localStorage.user)
     {
-        window.location = '#/questions';
+        window.location = '#/welcome';
     }
 
     var get_user_data = localStorage.getItem('user');   

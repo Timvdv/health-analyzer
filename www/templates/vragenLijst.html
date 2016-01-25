@@ -6,8 +6,6 @@
     
     <ion-content padding="'true'">
         <form class="question_list" style="margin: 50px 0 0 20px" >
-            <div class="error" ng-if="error.error" style="color:red"><br>{{error.message}}</div>
-
             <div>
                 <span>What is your first name?</span>
                 <input ng-model="questions_name" type="text" id="questions_name" placeholder="" name="name">
@@ -40,6 +38,7 @@
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Several times a week</ion-radio>
                 <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Every day</ion-radio>
             </ion-list>
+            <div class="error" ng-if="error.error" style="color:red"><br>{{error.message}}</div>
             <label style="display: block;">
                <input type="button" value="Next" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
