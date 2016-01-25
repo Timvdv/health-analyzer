@@ -31,25 +31,23 @@ angular.module('app.controllers').controller('homeCtrl', ['$scope', '$http', '$l
 
     if(bmi_calculation < 18.5) {
         bmi_result = "Underweight";
-        bmi_advice = "You have underweight. Try to eat every two hours some small things, but make sure you eat health things(like yogurt). So you will gain weight in a healthy way."
+        bmi_advice = "You are suffering from underweight. Try to eat something every two hours, because its good for your digestion, but make sure its healthy food with as less fat as possible. This way you will gain weight in a healthy way.";
     }
     if(bmi_calculation >= 18.5 && bmi_calculation < 25) {
         bmi_result = "Healthy weight";
-        bmi_advice = "Good job! You have a healthy weight. Try to keep this weight. But keep eating healthy food and stay away from the unhealthy food. Also it helps, when you keep working out!";
+        bmi_advice = "Good job! You have a healthy weight. Try to keep this weight and stick to the healthy stuff. Working out from time to time als does wonders!";
     }
     if(bmi_calculation >= 25 && bmi_calculation < 30) {
         bmi_result = "Overweight";
-        bmi_advice = "You are overweight. You are a little bit to heavy. Try to eat less or try step over to some healthy food. Besides that, you can also consider to work out a little more";
+        bmi_advice = "You are suffering from overweight. Being overweight can cause alot of health problems, including cardiovascular diseases. Try to lose weight by following a diet and by working out regularly.";
     }
     if(bmi_calculation >= 30 && bmi_calculation < 35) {
         bmi_result = "Obesity";
-        bmi_advice = "You have obesity, so you are to heavy. Try to eat less and make sure you eat healthy food. We also think that you have to workout to lose some weight." +
-        "Make sure that you use this eat pattern for a good amount of time, otherwise the chance to go back to unhealthy food is big";
-    }
+        bmi_advice = "You have obesity. Try to minimize your daily food comsumption and make sure you eat healthy food. We highly recommend that you seek out a fitness coach that can help you lose weight.";
+    } 
     if(bmi_calculation >= 35) {
         bmi_result = "Extreme obesity";
-        bmi_advice = "Oops.. you have extremely obesity. That is not good! You are way to heavy and we recommend you to go to your family doctor. " +
-        "Take some advice from your family doctor, because this is a dangerous situation.";
+        bmi_advice = "You are suffering from extreme obesity. We highly recommend you seek out a doctor that can help you with this matter. Being obese carries alot of health risks that can prove fatal if untreated.";
     }
 
     console.log(user_length);

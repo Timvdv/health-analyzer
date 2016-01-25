@@ -2,11 +2,32 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
 {
     console.log('graphCtrl1');
     $scope.location = $location.path();
-
-    localStorage.animate = false;
+    var currentMonth = new Date().getMonth();
+    console.log(currentMonth);
+    var monthName = "January";
+    switch(currentMonth)
+    {
+        case 0:
+            monthName = "January";
+            break;
+        case 1:
+            monthName = "February";
+            break;
+        case 2: 
+            monthName = "March";
+            break;
+        case 3:
+            monthName = "April";
+            break;
+        case 4: 
+            monthName = "May";
+            break;
+    }
     
+    localStorage.animate = false;
+        var current
         var data = {
-            labels: ["December","Toekomst"],
+            labels: [monthName,"Future"],
             datasets: [
                 {
                     label: "My First dataset",
@@ -32,7 +53,7 @@ angular.module('app.controllers').controller('graphCtrl', ['$scope', '$http', '$
         };
 
     var dataBars = {
-        labels: ["December", "Toekomst"],
+        labels: [monthName, "Future"],
         datasets: [
             {
                 label: "My First dataset",
