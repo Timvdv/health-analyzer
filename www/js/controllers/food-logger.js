@@ -1,4 +1,4 @@
-angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', '$location', function($scope, $http, $location)
+angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http', '$location', "statusMessage", function($scope, $http, $location, statusMessage)
 {
     $scope.search = "";
     $scope.details = "no search yet";
@@ -181,6 +181,14 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     var tempItemList = [];
     var firstClick = true;
 
+    if(localStorage['status'] == "true")
+    {
+        $scope.statusMessage = "Your food has been added.";
+        localStorage['status'] = "false";
+    } else
+    {
+        $scope.statusMessage = statusMessage.emptyMessage();
+    }
 
     $scope.searchChange = function (event)
     {
@@ -204,7 +212,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
                 clearInterval(countdown_interval);
                 $scope.searchChange(searchEvent);
             }
-        }, 125);
+        }, 100);
     };
 
     // WORK IN PROGRESS.
@@ -212,7 +220,6 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     {
         if(firstClick == true && localStorage["items"]){
             itemList = JSON.parse(localStorage["items"]);    
-            //localStorage["items"] = "";
         } 
 
         firstClick = false;
@@ -223,6 +230,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
         var fatRegex = /Fat:\s(\d+)/ig;
         var regexCal = caloriesRegex.exec(description);
         var regexFat = fatRegex.exec(description);
+        
         if(regexCal && regexCal.length)
         {
             cal = parseInt(regexCal[1]);
@@ -247,7 +255,7 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
 
         var closest_el = closest(element);
 
-        element.children[1].innerHTML = element.dataset.click_count;    
+        element.children[1].innerHTML = element.dataset.click_count + "x";    
 
         itemList[currentDate.getMonth()].items.push({
             "id": id,
@@ -288,8 +296,10 @@ angular.module('app.controllers').controller('foodLoggerCtrl', ['$scope', '$http
     };
     $scope.reload = function()
     {
+        console.log("Reload.");
+        localStorage.setItem('status', 'true');
+        localStorage.setItem('statusMessage', "Your food has been added.");
         window.location.reload(true);
-              
     }
 
     $scope.showButton = function()

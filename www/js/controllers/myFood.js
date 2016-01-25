@@ -1,6 +1,5 @@
-angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '$location', function($scope, $http, $location)
+angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '$location', "statusMessage", function($scope, $http, $location, statusMessage)
 {
-    
     var getDate = new Date();
     var currentDate = getDate.toJSON().slice(0,10);
     var currentMonth = getDate.getMonth()+1;
@@ -17,7 +16,6 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     var totalFat = 0;
     var calorieButton = document.getElementById('totalCalories');
     var fatButton = document.getElementById('totalFat');
-
 //===========================================================================================================
 // NUMBER FIX FUNCTION
 //=========================================================================================================== 
@@ -39,6 +37,18 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         else{
             dayFix = currentDay;
         }
+        if (currentDay == 31 && $scope.plus == true)
+        {
+            currentDay = 0;
+            currentMonth++;
+        }
+        if (currentDay == 1 && $scope.minus == true)
+        {
+            currentDay = 32;
+            currentMonth--;
+        }
+        $scope.plus = false;
+        $scope.minus = false;
     }
     $scope.numberFix();
 
@@ -162,6 +172,7 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     $scope.previousDay = function()
     {
         currentDay--;
+        $scope.minus = true;
         $scope.numberFix();
         
         dateString = "2016-" + monthFix + "-" + dayFix;
@@ -177,6 +188,7 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
     $scope.nextDay = function()
     {
         currentDay++;
+        $scope.plus = true;
         $scope.numberFix();
 
         dateString = "2016-" + monthFix + "-" + dayFix;
@@ -185,4 +197,13 @@ angular.module('app.controllers').controller('myFoodCtrl', ['$scope', '$http', '
         $scope.checkForMatch(String(dateString));
         $scope.calorieChecker($scope.totalCalories, $scope.totalFat);
     };
+
+//===========================================================================================================
+// NEXT DAY FUNCTION
+//=========================================================================================================== 
+    $scope.changeStatus = function()
+    {
+        localStorage['status'] == "false";
+        statusMessage.emptyMessage();
+    }
 }]);

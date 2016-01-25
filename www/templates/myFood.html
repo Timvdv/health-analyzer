@@ -22,7 +22,7 @@
 <ion-footer-bar align-title="left" class="button-block">
     <button id="totalCalories">{{totalCalories}} kcal total</button>
     <button id="totalFat">{{totalFat}} gram(s) fat total</button>
-    <a href="#/log" class="button button-balanced button-block  icon ion-android-add">
+    <a href="#/log" ng-click="changeStatus()" class="button button-balanced button-block  icon ion-android-add">
         Add Food Items
     </a>
 </ion-footer-bar>

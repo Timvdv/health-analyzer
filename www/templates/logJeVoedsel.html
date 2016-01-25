@@ -16,17 +16,18 @@
                 food_type="{{food.type}}"
                 food_url="{{food.url}}"
                 data-click_count="0"
-                class="icon ion-android-add" ng-click="addItem($event, food.food_id, food.food_name, food.food_type, food.food_description, food.food_url)" >
+                class="" ng-click="addItem($event, food.food_id, food.food_name, food.food_type, food.food_description, food.food_url)" >
                     <span class="spanChild">{{food.food_name}}<br>
                     {{food.food_description}}</span><span class="clickCounter clicked-count">0</span>
             </ion-item>
+            <p style="text-align: center; margin-top:5%; color: #28a54c">{{statusMessage}}</p>
         </ion-list>
         <!-- <button class="button button-stable button-block ">Nieuwe set</button> -->
         <div class="spacer" style="height: 100px;"></div>
     </ion-content>
 </ion-view>
 <ion-footer-bar align-title="left" class="button-block" style="display: none" id="doneButton">
-    <a href="#/myfood" class="button button-balanced button-block" ng-click="toLocalStorage()">
+    <button class="button button-balanced button-block" ng-click="toLocalStorage()">
         Done
-    </a>
+    </button>
 </ion-footer-bar>

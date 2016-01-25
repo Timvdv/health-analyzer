@@ -304,7 +304,6 @@ h1
     border-radius:2px;
 }
 
-
 a
 {
     text-decoration: none;
@@ -331,7 +330,7 @@ a
 }
 .picked .spanChild
 {
-    width:80%;
+    width:73%;
     display: inline-block;
     text-overflow:ellipsis;
     white-space: nowrap;
