@@ -265,8 +265,6 @@ h1
     min-height: 50px;
 }
 
-<<<<<<< HEAD
-=======
 #bmi_result div{
     display: inline-block;
     width: 50%;
@@ -287,22 +285,39 @@ h1
 
 }
 .calorie-negative{
-    border: 2px solid #e42112;
+    border: 1px solid #e42112;
     border-color: #e42112;
     background-color: #ef473a;
     border-radius:2px;
 }
 
 .calorie-danger{
-    border: 2px solid #e6b500;
+    border: 1px solid #e6b500;
     border-color:#e6b500;
     background-color:#ffc900;
     border-radius:2px;
 }
 .calorie-positive{
-    border: 2px solid #28a54c;
+    border: 1px solid #28a54c;
     border-color: #28a54c;
     background-color: #33cd5f;
     border-radius:2px;
 }
->>>>>>> 5fa2e2b07224de24a45a25bc43adbe3fd15f1331
+
+
+a
+{
+    text-decoration: none;
+    color:black;
+}
+
+.negative{
+    color: #ef473a;
+}
+
+.danger{
+    color: #ffc900;
+}
+.positive{
+    color: #33cd5f;
+}

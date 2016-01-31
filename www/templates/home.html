@@ -19,58 +19,57 @@
                 </div>
             </div>
         </div>
-        <div class="list card">
-            <div class="item item-divider">1 Day ago</div>
+
+        <div class="card" style="margin-bottom:20px">
+            <div class="item item-divider">Today - ({{today}})</div>
             <div class="item item-body">
                 <div>
-                    <p>
-                        Je hebt een <strong>broodje kaas, broodje ham </strong> en een <strong> glas sinasappelsap</strong> op. In totaal bevatte dit 230 calorien en een hoop Vitamine C.
-                        Add some
-                        <b>HTML</b>for
-                        <u>flavor</u>
-                    </p>
+                    <ul>
+                        <li>Last food item: <strong>{{lastItemToday}}</strong></li>
+                        <li>Total calories:  <strong id="caloriesToday">{{totalCaloriesToday}}</strong> </li>
+                        <li>Total gram(s) of fat:  <strong id="fatToday">{{totalFatToday}}</strong></li>
+                    </ul>
                     <hr>
                     <strong>
-                        View in your profile
+                        <a href="#/myfood">View in your profile</a>
                     </strong>
-                </div>
+                </div>  
             </div>
         </div>
-        <div class="list card">
-            <div class="item item-divider">2 Days ago</div>
+
+        <div class="card" style="margin-bottom:20px">
+            <div class="item item-divider">{{yesterday}}</div>
             <div class="item item-body">
                 <div>
-                    <p>
-                        Je hebt een <strong>broodje kaas, broodje ham </strong> en een <strong> glas sinasappelsap</strong> op. In totaal bevatte dit 230 calorien en een hoop Vitamine C.
-                        Add some
-                        <b>HTML</b>for
-                        <u>flavor</u>
-                    </p>
+                    <ul>
+                        <li>Last food item: <strong>{{lastItemYesterday}}</strong></li>
+                        <li>Total calories: <strong id="caloriesYesterday">{{totalCaloriesYesterday}}</strong></li>
+                        <li>Total gram(s) of fat: <strong id="fatYesterday">{{totalFatYesterday}}</strong> </li>
+                    </ul>
                     <hr>
                     <strong>
-                        View in your profile
+                        <a href="#/myfood">View in your profile</a>
                     </strong>
-                </div>
+                </div>  
             </div>
         </div>
-        <div class="list card">
-            <div class="item item-divider">3 Days ago</div>
+
+        <div class="card" style="margin-bottom:20px">
+            <div class="item item-divider">{{dayBeforeYesterday}}</div>
             <div class="item item-body">
                 <div>
-                    <p>
-                        Je hebt een <strong>broodje kaas, broodje ham </strong> en een <strong> glas sinasappelsap</strong> op. In totaal bevatte dit 230 calorien en een hoop Vitamine C.                    
-                        Add some
-                        <b>HTML</b>for
-                        <u>flavor</u>
-                    </p>
+                    <ul>
+                        <li>Last food item: <strong>{{lastItemToday}}</strong></li>
+                        <li>Total calories: <strong id="caloriesDayBeforeYesterday">{{totalCaloriesDayBeforeYesterday}} </strong></li>
+                        <li>Total gram(s) of fat: <strong id="fatDayBeforeYesterday">{{totalFatDayBeforeYesterday}}</strong> </li>
+                    </ul>
                     <hr>
                     <strong>
-                        View in your profile
+                        <a href="#/myfood">View in your profile</a>
                     </strong>
-                </div>
+                </div>  
             </div>
         </div>
-        
     </ion-content>
 </ion-view>
 
