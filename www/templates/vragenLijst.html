@@ -1,45 +1,45 @@
 <ion-view title="quiz">
 
     <div class="bar bar-header bar-light">
-        <h1 class="title" style="color: #9c9c9c;  text-transform: uppercase; font-size: 15px">Gegevens invullen</h1>
+        <h1 class="title" style="color: #9c9c9c;  text-transform: uppercase; font-size: 15px">Fill in data</h1>
     </div>
     
     <ion-content padding="'true'">
         <form class="question_list" style="margin: 50px 0 0 20px" >
             <div>
-                <span>Wat is je voornaam?</span>
+                <span>What is your first name?</span>
                 <input ng-model="questions_name" type="text" id="questions_name" placeholder="" name="name">
             </div>
 
             <div>
-                <span>Hoeveel weeg je?(Kg)</span>
+                <span>What is your weight? (Kg)</span>
                 <input type="text" id="questions_weight" placeholder="" name="weight">
             </div>
 
             <div>
-                <span>Wat is je lengte?(Cm)</span>
+                <span>Wat is your length?(Cm)</span>
                 <input type="text" id="questions_length" placeholder="" name="length">
             </div>
 
             <div>
-                <span>Wat is je geboortedatum?</span>
+                <span>What is your birth date?</span>
                 <label>
                     <input id="questions_date"  type="date" name="birthdate">
                 </label>
             </div>
 
             <div>
-                <span>Hoevaak sport je?</span>
+                <span>How often do you sport?</span>
             </div>
 
             <ion-list>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Nauwlijks</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Een keer per week</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Meerdere keren per week</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Elke dag</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Barley</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Once a week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Several times a week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Every day</ion-radio>
             </ion-list>
             <label style="display: block;">
-               <input type="button" value="Verder" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
+               <input type="button" value="Next" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
         </form>
     </ion-content>

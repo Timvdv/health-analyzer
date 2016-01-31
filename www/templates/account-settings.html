@@ -6,50 +6,52 @@
         </div>
         <form class="question_list" name="question_list" style="margin: 50px 0 0 20px">
             <div>
-                <span>Naam</span>
+                <span>Name</span>
                 <input type="text" id="questions_name" placeholder="" name="name" value="">
             </div>
 
             <div>
-                <span>Gewicht(Kg)</span>
+                <span>Weight (Kg)</span>
                 <input type="text" id="questions_weight" placeholder="" name="weight">
             </div>
 
             <div>
-                <span>Lengte(Cm)</span>
+                <span>Length (Cm)</span>
                 <input type="text" id="questions_length" placeholder="" name="length">
             </div>
 
             <div>
-                <span>Geboortedatum</span>
+                <span>Birth date</span>
                 <label>
                     <input id="questions_date"  type="date" name="birthdate">
                 </label>
             </div>
             <div>
-                <span>Herrinering gewicht: Periode </span>
+                <p style="text-transform: none; text-align: justify; padding: 0 10px 0 0; font-size: 15px">To calculate your Body Mass Index (BMI) over a few weeks/month, we need your new weight in a certain period.
+                    Please fill in your preference on the period and time of your weight notification.</p> <br>
+                <span style="margin-top: 20px">Weight notification: Period </span>
                 <label>
                     <select style="display: block; margin-top: 15px; margin-bottom: 15px" id="weight_memory">
                         <option> Week</option>
-                        <option> Twee weken</option>
-                        <option> Drie weken</option>
-                        <option> Maand</option>
+                        <option> Two weken</option>
+                        <option> Three weken</option>
+                        <option> Month</option>
                     </select>
                 </label>
                 <label>
-                    <span>Herringering gewicht: Tijd</span>
+                    <span>Weight notification: Time</span>
                     <input type="time" placeholder="" name="weight_time">
                 </label>
             </div>
 
             <ion-list style="display: none">
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Nauwlijks</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Een keer per week</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Meerdere keren per week</ion-radio>
-                <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Elke dag</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Nauwlijks'" value="A">Barely</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Een keer per week'" value="B">Once a week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Meerdere keren per week'" value="C">Several times a week</ion-radio>
+                <ion-radio ng-model="formData.questions_sport" ng-value="'Elke dag'" value="D">Every day</ion-radio>
             </ion-list>
             <label style="display: block;">
-                <input type="button" value="Opslaan" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
+                <input type="button" value="Save" id="questions_submit" ng-click="saveUserData()" class="button button-balanced" style="border-color: #33cd5f;">
             </label>
         </form>
     </ion-content>
